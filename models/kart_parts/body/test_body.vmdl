@@ -1,0 +1,136 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Metal.Medium"
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+							min_impact_damage_speed = -1.0
+							impact_damage = -1.0
+							parent_bodygroup_name = ""
+							parent_bodygroup_value = 0
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "cube.vmat"
+								to = "materials/kart.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsHullFromRender"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						faceMergeAngle = 20.0
+						maxHullVertices = 32
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "wheel1"
+						parent_bone = ""
+						relative_origin = [ 42.0, 25.0, 3.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "wheel2"
+						parent_bone = ""
+						relative_origin = [ 42.0, -25.0, 3.0 ]
+						relative_angles = [ 0.0, 0.0, 180.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "wheel3"
+						parent_bone = ""
+						relative_origin = [ -30.0, 25.0, 3.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "wheel4"
+						parent_bone = ""
+						relative_origin = [ -30.0, -25.0, 3.0 ]
+						relative_angles = [ 0.0, 0.0, 180.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/kart_parts/body/test_body.fbx"
+						import_translation = [ 0.0, 0.0, 18.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.2
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}

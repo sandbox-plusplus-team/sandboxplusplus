@@ -1,0 +1,53 @@
+﻿notifications {
+  justify-content: flex-end;
+  flex-direction: column;
+  position: absolute;
+  right: 15px;
+  bottom: 8%;
+
+  height: 50%;
+
+  & .notif {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease-out;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 45px;
+    width: 100%;
+
+    margin-top: 5px;
+
+    & .msg {
+      vertical-align: middle;
+      font-family: Poppins;
+      font-size: 22px;
+      color: white;
+
+      text-shadow: 2px 2px #000000;
+
+      margin-left: 45px;
+      margin-right: 15px;
+    }
+
+    & .emote {
+      position: absolute;
+
+      transform: translateY(-55%);
+      left: 2px;
+      top: 50%;
+
+      margin-right: 10px;
+      margin-left: 5px;
+      font-size: 32px;
+    }
+
+    &:intro {
+      transform: translateX(500px) translateY(500px);
+    }
+
+    &:outro {
+      transform: translateX(500px);
+    }
+  }
+}

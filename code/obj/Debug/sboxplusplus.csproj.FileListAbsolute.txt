@@ -1,0 +1,15 @@
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\code\obj\Debug\sboxplusplus.GlobalUsings.g.cs
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\code\obj\Debug\sboxplusplus.csproj.AssemblyReference.cache
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\code\obj\Debug\sboxplusplus.GeneratedMSBuildEditorConfig.editorconfig
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\code\obj\Debug\sboxplusplus.AssemblyInfoInputs.cache
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\code\obj\Debug\sboxplusplus.AssemblyInfo.cs
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\code\obj\Debug\sboxplusplus.csproj.CoreCompileInputs.cache
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\.vs\output\sboxplusplus.xml
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\.vs\output\sboxplusplus.deps.json
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\.vs\output\sboxplusplus.dll
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\.vs\output\ref\sboxplusplus.dll
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\.vs\output\sboxplusplus.pdb
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\code\obj\Debug\sboxplusplus.csproj.CopyComplete
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\code\obj\Debug\sboxplusplus.dll
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\code\obj\Debug\ref\sboxplusplus.dll
+D:\SteamGames\steamapps\common\sbox\addons\sboxplusplus\code\obj\Debug\sboxplusplus.pdb
