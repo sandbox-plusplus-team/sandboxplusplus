@@ -100,10 +100,10 @@ InventoryBar {
 }
 
 InventoryIcon {
-	width: 130px;
-	height: 80px;
-	border: 2px solid rgba(255, 226, 0, 0.58);
-	background-color: rgba( black, 0.7 );
+	width: 70px;
+	height: 70px;
+	border: 2px solid rgba( 172, 196, 220, 1);
+	background-color: rgba( 172, 196, 220, 0.1);
 	margin: 0px 2px;
 	position: relative;
 	transition: all 0.2s ease-out;
@@ -115,7 +115,7 @@ InventoryIcon {
 
 	.item-name {
 		padding: 5px;
-		color: rgba(255, 226, 0, 1);
+		color: rgb(212,228,233);
 		text-align: center;
 		left: 0;
 		right: 0;
@@ -128,7 +128,7 @@ InventoryIcon {
 
 	.slot-number {
 		font-size: 15px;
-		color: rgba(255, 226, 0, 0.58);
+		color: rgb(212,228,233);
 		font-weight: 520;
 		opacity: 0.6;
 		position: absolute;
@@ -138,10 +138,10 @@ InventoryIcon {
 	}
 
 	&.active {
-		background-color: rgba(255, 226, 0, 0.2);
+		background-color: rgb(141,156,164);
 		border: 1px solid rgba( white, 0.8 );
 		transition: all 0.1s ease-out;
-		height: 90px;
+		height: 70px;
 
 		.slot-number {
 			color: white;

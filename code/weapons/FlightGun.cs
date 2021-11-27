@@ -32,9 +32,9 @@ partial class FlightGun : Weapon
 		// Shoot the bullets
 		//
 		ShootFlightBullet( 0.0f, 0.0f, 0.0f, 0.0f );
-		
-		Owner.Velocity = Owner.EyeRot.Forward * 1000;
-		
+
+		Owner.Velocity = Owner.EyeRot.Forward * 3000;
+
 	}
 
 	public override void AttackSecondary()
@@ -49,7 +49,7 @@ partial class FlightGun : Weapon
 		//
 		ShootFlightBullet( 0.0f, 0.0f, 0.0f, 0.0f );
 
-		Owner.Velocity = Owner.EyeRot.Forward * 3000;
+		Owner.Velocity = Owner.EyeRot.Forward * -3000;
 	}
 
 	[ClientRpc]
