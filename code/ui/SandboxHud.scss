@@ -22,17 +22,23 @@ Compass {
 Health {
 	position: absolute;
 	background-color: rgba(0, 0, 0, 0.58);
-	left: 100px;
+	border: 2px solid rgba( 172, 196, 220, 1);
+	left: 60px;
 	bottom: 48px;
 	font-family: halflife2;
-	font-size: 60px;
+	font-size: 50px;
 	font-weight: bold;
-	color: rgba(255, 226, 0, 0.58);
+	color: rgba(255, 255, 255, 1);
 	height: 80px;
+	width: 180px;
 	padding: 0 20px;
 	align-items: center;
 	border-radius: 15px;
-	
+
+	.icon {
+		font-size: 35px;
+		padding-right: 10px;
+	}
 }
 
 CurrentTool {
@@ -90,7 +96,8 @@ rootpanel {
 InventoryBar {
 	position: absolute;
 	width: 100%;
-	top: 48px;
+	bottom: 48px;
+	left: 39px;
 	justify-content: center;
 	align-items: flex-end;
 	
@@ -141,7 +148,7 @@ InventoryIcon {
 		background-color: rgb(141,156,164);
 		border: 1px solid rgba( white, 0.8 );
 		transition: all 0.1s ease-out;
-		height: 70px;
+		height: 82px;
 
 		.slot-number {
 			color: white;
