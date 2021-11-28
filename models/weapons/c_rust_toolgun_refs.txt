@@ -1,0 +1,7 @@
+importfilelist
+{
+	"file"	"toolgun_is_unused.vmt"
+	"file"	"toolgun2_is_unused.vmt"
+	"file"	"screen_is_unused.vmt"
+	"file"	"toolgun3_is_unused.vmt"
+}

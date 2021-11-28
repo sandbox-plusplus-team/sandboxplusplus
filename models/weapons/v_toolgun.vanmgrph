@@ -95,7 +95,7 @@
 	}
 	m_previewModels = 
 	[
-		"models/weapons/v_toolgun.vmdl",
+		"models/weapons/c_rust_toolgun.vmdl",
 	]
 	m_nodes = 
 	[
@@ -138,7 +138,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "reload"
+				m_sequenceName = "@admire"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}
@@ -160,7 +160,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "deploy"
+				m_sequenceName = "@deploy"
 				m_playbackSpeed = 2.0
 				m_bLoop = false
 			}
@@ -182,7 +182,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "fire"
+				m_sequenceName = "@dryfire"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}
@@ -523,7 +523,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "idle01"
+				m_sequenceName = "@idle"
 				m_playbackSpeed = 1.0
 				m_bLoop = true
 			}
