@@ -4,8 +4,6 @@
 	{
 		sounds = 
 		[
-			"sounds/weapons/airboat/airboat_gun_lastshot2.vsnd",
-			"sounds/weapons/airboat/airboat_gun_lastshot1.vsnd",
 			"sounds/weapons/toolgun/toolgun-attack-001.vsnd",
 			"sounds/weapons/toolgun/toolgun-attack-002.vsnd",
 			"sounds/weapons/toolgun/toolgun-attack-003.vsnd",
