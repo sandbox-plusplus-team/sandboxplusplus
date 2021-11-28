@@ -105,6 +105,8 @@ partial class SandboxPlayer : Player
 
 		Inventory.DropActive();
 		Inventory.DeleteContents();
+
+		Sound.FromScreen( "ui.popup.message.open" );
 	}
 
 	public override void TakeDamage( DamageInfo info )

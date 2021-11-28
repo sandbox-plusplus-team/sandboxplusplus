@@ -26,11 +26,11 @@ namespace Sandbox.UI
 		{
 			base.Tick();
 
-			if ( TimeSinceBorn > 6 ) 
+			if ( TimeSinceBorn > 4 ) 
 			{ 
 				Delete();
+				Sound.FromScreen( "ui.popup.message.close" );
 			}
 		}
-
 	}
 }
