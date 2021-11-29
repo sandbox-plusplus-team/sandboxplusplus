@@ -17,4 +17,7 @@ partial class Hands : Weapon
         anim.SetParam("holdtype", 0);
         anim.SetParam("aimat_weight", 1.0f);
     }
+	public override void OnCarryDrop( Entity dropper )
+	{
+	}
 }
