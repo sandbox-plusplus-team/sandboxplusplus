@@ -52,7 +52,7 @@
 					tr.Entity.Delete();
 
 					var particle = Particles.Create( "particles/physgun_freeze.vpcf" );
-					particle.SetPosition( 0, tr.Entity.Position );
+					particle.SetPosition( 1, tr.Entity.Position );
 				}
 				else if ( Input.Down( InputButton.Attack2 ) )
 				{
@@ -74,7 +74,7 @@
 							ent.Parent is BaseCarriable || ent is Client ) continue;
 						CreateHitEffects( ent.Position );
 						var particle = Particles.Create( "particles/physgun_freeze.vpcf" );
-						particle.SetPosition( 0, tr.EndPos );
+						particle.SetPosition( 1, tr.EndPos );
 						ent.Delete();
 					}
 				}
