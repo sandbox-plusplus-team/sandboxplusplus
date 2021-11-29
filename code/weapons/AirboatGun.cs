@@ -33,7 +33,7 @@ partial class AirboatGun : Weapon
 		//
 		ShootBullet( 0.0f, 25.5f, 25.0f, 3.0f );
 
-		Owner.Velocity = Owner.EyeRot.Forward * -230;
+		Owner.Velocity = Owner.EyeRot.Forward * -70;
 	}
 
 	public override void AttackSecondary()
