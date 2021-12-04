@@ -31,7 +31,7 @@
 ]
 
 //
-// Zombie
+// Friend
 //
 @PointClass base(BaseProperties_sbox_plusplus) = npc_friend : ""
 [

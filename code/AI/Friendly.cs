@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 
 [Library("npc_friend", Title = "Terry Follower", Spawnable = true)]
-public class Zombie : BaseNpc
+public class Friend : BaseNpc
 {
 	private static float lastAttack;
 	public override void Spawn()
