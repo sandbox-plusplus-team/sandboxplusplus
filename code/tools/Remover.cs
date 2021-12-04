@@ -46,7 +46,10 @@
 
 					CreateHitEffects( tr.EndPos );
 
-					if ( tr.Entity.IsWorld )
+					if ( tr.Entity is Mesh )
+						return;
+
+					if ( tr.Entity is WorldEntity )
 						return;
 
 					tr.Entity.Delete();

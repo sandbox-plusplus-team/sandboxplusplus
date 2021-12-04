@@ -4,6 +4,9 @@
 partial class SandboxGame : Game
 {
 
+	[ConVar.Replicated( "replicatormelons_max" )]
+	public static int MaxMelons { get; set; } = 150;
+
 	[ClientRpc]
 	public void PlaySoundFromScreen(string name, double x = 0.5, double y = 0.5)
 	{
@@ -119,4 +122,13 @@ partial class SandboxGame : Game
 	{
 		ConsoleSystem.Run( "quit" );
 	}
+
+	//[ClientCmd( "goldenglizzykill" )]
+	//public static void GoldenKill( Client pawn )
+	//{
+		//if ( pawn is Player player )
+		//{
+			//player.Health += -10000000;
+		//}
+	//}
 }
