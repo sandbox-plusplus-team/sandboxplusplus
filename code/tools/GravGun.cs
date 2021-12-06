@@ -3,7 +3,7 @@ using Sandbox.Joints;
 using System;
 using System.Linq;
 
-[Library("gravgun")]
+[Library("gravgun", Title = "Gravgun", Spawnable = true )]
 public partial class GravGun : Carriable
 {
 	public override string ViewModelPath => "models/weapons/v_physcannon/v_gravcannon.vmdl";
@@ -192,8 +192,15 @@ public partial class GravGun : Carriable
 		}
 	}
 
-	public override void OnCarryDrop(Entity dropper)
+	public override void OnCarryDrop( Entity dropper )
 	{
+		if ( IsClient ) return;
+
+		SetParent( null );
+		Owner = null;
+		MoveType = MoveType.Physics;
+		EnableDrawing = true;
+		EnableAllCollisions = true;
 	}
 
 	private static bool IsBodyGrabbed(PhysicsBody body)

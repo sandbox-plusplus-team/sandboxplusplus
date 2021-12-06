@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using Sandbox.Tools;
 
-[Library( "weapon_tool", Title = "Toolgun" )]
+[Library( "weapon_tool", Title = "Toolgun", Spawnable = true )]
 partial class Tool : Carriable
 {
 	[ConVar.ClientData( "tool_current" )]
@@ -75,6 +75,13 @@ partial class Tool : Carriable
 
 	public override void OnCarryDrop( Entity dropper )
 	{
+		if ( IsClient ) return;
+
+		SetParent( null );
+		Owner = null;
+		MoveType = MoveType.Physics;
+		EnableDrawing = true;
+		EnableAllCollisions = true;
 	}
 
 	[Event.Frame]

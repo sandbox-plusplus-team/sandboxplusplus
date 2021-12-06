@@ -3,7 +3,7 @@ using Sandbox.Joints;
 using System;
 using System.Linq;
 
-[Library( "physgun" )]
+[Library( "physgun", Title = "Physgun", Spawnable = true )]
 public partial class PhysGun : Carriable
 {
 	public override string ViewModelPath => "models/weapons/v_physcannon/v_physcannon.vmdl";
@@ -322,6 +322,13 @@ public partial class PhysGun : Carriable
 
 	public override void OnCarryDrop( Entity dropper )
 	{
+		if ( IsClient ) return;
+
+		SetParent( null );
+		Owner = null;
+		MoveType = MoveType.Physics;
+		EnableDrawing = true;
+		EnableAllCollisions = true;
 	}
 
 	private void GrabInit( PhysicsBody body, Vector3 startPos, Vector3 grabPos, Rotation rot )
