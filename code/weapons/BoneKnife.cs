@@ -5,7 +5,7 @@ partial class Boneknife : Weapon
 {
 	public override string ViewModelPath => "weapons/rust_boneknife/v_rust_boneknife.vmdl";
 
-	public override float PrimaryRate => 2.5f;
+	public override float PrimaryRate => 1.5f;
 	public override float SecondaryRate => 2.0f;
 	
 	public override void Spawn()
