@@ -37,12 +37,33 @@ public partial class WeaponList : Panel
 
 			var dmwpn = Library.GetAllAttributes<BaseDmWeapon>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
 
+			var tgun = Library.GetAllAttributes<Tool>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
+
+			var ggun = Library.GetAllAttributes<GravGun>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
+
+			var pgun = Library.GetAllAttributes<PhysGun>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
+
 		foreach (var entry in wpn)
 		{
 			Canvas.AddItem(entry);
 		}
 
 		foreach ( var entry in dmwpn )
+		{
+			Canvas.AddItem( entry );
+		}
+
+		foreach ( var entry in tgun )
+		{
+			Canvas.AddItem( entry );
+		}
+
+		foreach ( var entry in ggun )
+		{
+			Canvas.AddItem( entry );
+		}
+
+		foreach ( var entry in pgun )
 		{
 			Canvas.AddItem( entry );
 		}
