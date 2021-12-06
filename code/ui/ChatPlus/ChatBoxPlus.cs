@@ -9,7 +9,7 @@ namespace Sandbox.UI
 {
 	public partial class ChatBoxPlus : Panel
 	{
-		static ChatBoxPlus Current;
+		public static ChatBoxPlus Current;
 
 		public Panel Canvas { get; protected set; }
 		public TextEntry Input { get; protected set; }
@@ -35,6 +35,17 @@ namespace Sandbox.UI
 		{
 			AddClass( "open" );
 			Input.Focus();
+
+			foreach ( Panel message in Canvas.Children )
+			{
+				if ( message is ChatEntryPlus c )
+				{
+					if ( c.HasClass( "hide" ) )
+					{
+						c.AddClass( "show" );
+					}
+				}
+			}
 		}
 
 		void Close()

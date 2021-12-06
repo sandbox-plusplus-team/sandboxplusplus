@@ -25,11 +25,33 @@ public partial class WeaponList : Panel
 			btn.Style.BackgroundImage = Texture.Load( $"/entity/{entry.Name}.png", false );
 		};
 
-		var wpn = Library.GetAllAttributes<Weapon>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
+		LoadAllItem( false );
+	}
 
-		foreach ( var entry in wpn )
+	private void LoadAllItem(bool isreload)
+	{
+		if (isreload)
+			Canvas.Data.Clear();
+
+			var wpn = Library.GetAllAttributes<Weapon>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
+
+			var dmwpn = Library.GetAllAttributes<BaseDmWeapon>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
+
+		foreach (var entry in wpn)
+		{
+			Canvas.AddItem(entry);
+		}
+
+		foreach ( var entry in dmwpn )
 		{
 			Canvas.AddItem( entry );
 		}
+	}
+
+	public override void OnHotloaded()
+	{
+		base.OnHotloaded();
+
+		LoadAllItem(true);
 	}
 }

@@ -79,6 +79,11 @@ chatentryplus {
 		top: 6px;
 	}
 
+	&.hide {
+		opacity: 0;
+		transition: all 1s ease-out;
+	}
+
 	.name {
 		padding-right: 20px;
 		font-weight: 600;

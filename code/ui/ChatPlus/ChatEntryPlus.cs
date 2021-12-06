@@ -22,10 +22,14 @@ namespace Sandbox.UI
 		{
 			base.Tick();
 
-			if ( TimeSinceBorn > 10 ) 
-			{ 
-				Delete();
+			if ( TimeSinceBorn > 3 && !ChatBoxPlus.Current.HasClass( "open" ) )
+			{
+				Hide();
 			}
+		}
+		public void Hide()
+		{
+			AddClass( "hide" );
 		}
 	}
 }

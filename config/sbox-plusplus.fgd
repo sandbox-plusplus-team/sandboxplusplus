@@ -658,6 +658,26 @@
 ]
 
 //
+// Boneknife
+//
+@PointClass base(BaseProperties_sbox_plusplus) = weapon_boneknife : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// Crossbow
+//
+@PointClass base(BaseProperties_sbox_plusplus) = weapon_crossbow : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
 // Crowbar
 //
 @PointClass base(BaseProperties_sbox_plusplus) = weapon_crowbar : ""
@@ -731,6 +751,16 @@
 // MP5
 //
 @PointClass base(BaseProperties_sbox_plusplus) = weapon_mp5 : ""
+[
+	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+]
+
+//
+// PipeShotgun
+//
+@PointClass base(BaseProperties_sbox_plusplus) = weapon_pipeshotgun : ""
 [
 	enable_shadows(boolean) { group = "Rendering" } : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
 
