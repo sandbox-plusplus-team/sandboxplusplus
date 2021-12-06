@@ -199,4 +199,11 @@ public partial class Weapon : BaseWeapon, IUse
 			ShootBullet( pos, dir, spread, force / numBullets, damage, bulletSize );
 		}
 	}
+
+	public override void OnCarryDrop( Entity dropper )
+	{
+        base.OnCarryDrop( dropper );
+
+		Sound.FromScreen( "ui.button.press" );
+	}
 }

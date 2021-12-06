@@ -75,13 +75,9 @@ partial class Tool : Carriable
 
 	public override void OnCarryDrop( Entity dropper )
 	{
-		if ( IsClient ) return;
+		base.OnCarryDrop( dropper );
 
-		SetParent( null );
-		Owner = null;
-		MoveType = MoveType.Physics;
-		EnableDrawing = true;
-		EnableAllCollisions = true;
+		Sound.FromScreen( "ui.button.press" );
 	}
 
 	[Event.Frame]

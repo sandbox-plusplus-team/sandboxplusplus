@@ -194,13 +194,7 @@ public partial class GravGun : Carriable
 
 	public override void OnCarryDrop( Entity dropper )
 	{
-		if ( IsClient ) return;
-
-		SetParent( null );
-		Owner = null;
-		MoveType = MoveType.Physics;
-		EnableDrawing = true;
-		EnableAllCollisions = true;
+		base.OnCarryDrop( dropper );
 	}
 
 	private static bool IsBodyGrabbed(PhysicsBody body)
