@@ -35,9 +35,16 @@ public partial class NpcList : Panel
 
 		var npc = Library.GetAllAttributes<BaseNpc>().Where(x => x.Spawnable).OrderBy(x => x.Title).ToArray();
 
+		var mlon = Library.GetAllAttributes<MelonEntity>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
+
 		foreach (var entry in npc)
 		{
 			Canvas.AddItem(entry);
+		}
+
+		foreach ( var entry in mlon )
+		{
+			Canvas.AddItem( entry );
 		}
 	}
 
