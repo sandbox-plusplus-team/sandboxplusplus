@@ -709,7 +709,7 @@
 							},
 							{
 								from = "screen_is_unused.vmat"
-								to = "materials/weapons/v_toolgun/screen.vmat"
+								to = "materials/weapons/v_toolgun/screen_physgun.vmat"
 							},
 							{
 								from = "toolgun2_is_unused.vmat"
@@ -722,28 +722,6 @@
 						]
 						use_global_default = false
 						global_default_material = ""
-					},
-					{
-						_class = "MaterialGroup"
-						name = "gravgun"
-						remaps = 
-						[
-							{
-								from = "materials/weapons/v_toolgun/screen.vmat"
-								to = "materials/weapons/v_toolgun/screen_gravgun.vmat"
-							},
-						]
-					},
-					{
-						_class = "MaterialGroup"
-						name = "physgun"
-						remaps = 
-						[
-							{
-								from = "materials/weapons/v_toolgun/screen.vmat"
-								to = "materials/weapons/v_toolgun/screen_physgun.vmat"
-							},
-						]
 					},
 				]
 			},

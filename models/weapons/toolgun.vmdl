@@ -101,7 +101,7 @@
 							},
 							{
 								from = "screen_is_unused.vmat"
-								to = "materials/weapons/v_toolgun/screen.vmat"
+								to = "materials/weapons/v_toolgun/screen_fp.vmat"
 							},
 						]
 						use_global_default = false
@@ -138,6 +138,9 @@
 						recenter_on_parent_bone = true
 						offset_origin = [ 0.0, 0.0, 0.0 ]
 						offset_angles = [ 0.0, 0.0, 0.0 ]
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
 						filename = "models/weapons/toolgun_refs/phys/w_toolgun_phy.dmx"
 						import_scale = 1.0
 						faceMergeAngle = 10.0

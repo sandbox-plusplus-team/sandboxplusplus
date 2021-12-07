@@ -76,6 +76,7 @@
 		[
 			{
 				_class = "CAnimGraphGeneralSettings"
+				m_iGridSnap = 16
 			},
 			{
 				_class = "CAnimGraphNetworkSettings"
@@ -113,6 +114,7 @@
 					m_id = 206872258
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_childID = 
 				{
 					m_id = 1714022296
@@ -134,6 +136,7 @@
 					m_id = 1421775535
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "v_boneknife@deploy"
 				m_playbackSpeed = 2.0
@@ -149,12 +152,13 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Unnamed"
-				m_vecPosition = [ -609.0, -191.0 ]
+				m_vecPosition = [ -624.0, -160.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1631504389
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "v_boneknife@slash_2"
 				m_playbackSpeed = 1.5
@@ -176,6 +180,7 @@
 					m_id = 1714022296
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_states = 
 				[
 					{
@@ -410,6 +415,7 @@
 					m_id = 2060363704
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "v_boneknife@idle"
 				m_playbackSpeed = 1.0

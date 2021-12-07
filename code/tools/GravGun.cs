@@ -6,7 +6,7 @@ using System.Linq;
 [Library("gravgun", Title = "Gravgun", Spawnable = true )]
 public partial class GravGun : Carriable
 {
-	public override string ViewModelPath => "models/weapons/v_physcannon/v_gravcannon.vmdl";
+	public override string ViewModelPath => "models/weapons/gravgun.vmdl";
 
 	private PhysicsBody holdBody;
 	private WeldJoint holdJoint;
@@ -35,7 +35,7 @@ public partial class GravGun : Carriable
 	{
 		base.Spawn();
 
-		SetModel("weapons/rust_pistol/rust_pistol.vmdl");
+		SetModel( "models/weapons/toolgun.vmdl" );
 
 		CollisionGroup = CollisionGroup.Weapon;
 		SetInteractsAs(CollisionLayer.Debris);
@@ -141,6 +141,13 @@ public partial class GravGun : Carriable
 				}
 			}
 		}
+	}
+
+	public override void SimulateAnimator( PawnAnimator anim )
+	{
+		anim.SetParam( "holdtype", 1 );
+		anim.SetParam( "aimat_weight", 1.0f );
+		anim.SetParam( "holdtype_handedness", 1 );
 	}
 
 	private void Activate()

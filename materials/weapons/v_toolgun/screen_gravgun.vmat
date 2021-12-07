@@ -4,6 +4,9 @@ Layer0
 {
 	shader "complex.vfx"
 
+	//---- Animation ----
+	F_MORPH_SUPPORTED 1
+
 	//---- PBR ----
 	F_SELF_ILLUM 1
 
@@ -15,7 +18,7 @@ Layer0
 	//---- Color ----
 	g_flModelTintAmount "1.000"
 	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
-	TextureColor "models/weapons/v_physcannon/mats/v_superphyscannon_sheet.tga"
+	TextureColor "materials/weapons/v_toolgun/screen_gravgun.png"
 
 	//---- Fade ----
 	g_flFadeExponent "1.000"
@@ -31,18 +34,18 @@ Layer0
 	g_flMetalness "0.000"
 
 	//---- Normal ----
-	TextureNormal "models/weapons/v_physcannon/mats/v_physcannon_normal.tga"
+	TextureNormal "materials/default/default_normal.tga"
 
 	//---- Roughness ----
 	TextureRoughness "materials/default/default_rough.tga"
 
 	//---- Self Illum ----
 	g_flSelfIllumAlbedoFactor "1.000"
-	g_flSelfIllumBrightness "5.050"
+	g_flSelfIllumBrightness "0.000"
 	g_flSelfIllumScale "1.000"
 	g_vSelfIllumScrollSpeed "[0.000 0.000]"
-	g_vSelfIllumTint "[0.647059 0.850980 0.847059 1.000000]"
-	TextureSelfIllumMask "models/weapons/v_physcannon/mats/v_physcannon_mask.tga"
+	g_vSelfIllumTint "[1.000000 1.000000 1.000000 0.000000]"
+	TextureSelfIllumMask "materials/lights/white_color.tga"
 
 	//---- Texture Coordinates ----
 	g_nScaleTexCoordUByModelScaleAxis "0"

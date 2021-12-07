@@ -6,7 +6,7 @@ using System.Linq;
 [Library( "physgun", Title = "Physgun", Spawnable = true )]
 public partial class PhysGun : Carriable
 {
-	public override string ViewModelPath => "models/weapons/v_physcannon/v_physcannon.vmdl";
+	public override string ViewModelPath => "models/weapons/physgun.vmdl";
 
 	protected PhysicsBody holdBody;
 	protected PhysicsBody velBody;
@@ -41,7 +41,7 @@ public partial class PhysGun : Carriable
 	{
 		base.Spawn();
 
-		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
+		SetModel( "models/weapons/toolgun.vmdl" );
 
 		CollisionGroup = CollisionGroup.Weapon;
 		SetInteractsAs( CollisionLayer.Debris );
@@ -107,6 +107,13 @@ public partial class PhysGun : Carriable
 		{
 			Input.MouseWheel = 0;
 		}
+	}
+
+	public override void SimulateAnimator( PawnAnimator anim )
+	{
+		anim.SetParam( "holdtype", 1 );
+		anim.SetParam( "aimat_weight", 1.0f );
+		anim.SetParam( "holdtype_handedness", 1 );
 	}
 
 	private static bool IsBodyGrabbed( PhysicsBody body )
