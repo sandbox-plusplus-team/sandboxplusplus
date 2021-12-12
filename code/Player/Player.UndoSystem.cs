@@ -4,7 +4,6 @@ using Sandbox;
 
 partial class SandboxPlayer
 {
-	
 	public Dictionary<Entity, int> UndoDictionary = new Dictionary<Entity, int>();
 
 	//Add entities to the undo list, so they can be removed later and up the index

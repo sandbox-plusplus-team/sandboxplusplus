@@ -567,7 +567,7 @@
 					{
 						_class = "RenderMeshFile"
 						name = "c_rust_toolgun_bg_toolgun_lod0"
-						filename = "models/weapons/c_rust_toolgun_refs/mesh/c_rust_toolgun_bg_toolgun_lod0.dmx"
+						filename = "models/weapons/v_toolgun_refs/mesh/v_toolgun_bg_studio_lod0.dmx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -610,27 +610,6 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "attack"
-						activity_name = "ACT_VM_PRIMARYATTACK"
-						activity_weight = 1
-						weight_list_name = "bonemask_default"
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/toolgun_refs/anim/_attack1_1.dmx"
-						start_frame = -1
-						end_frame = -1
-						framerate = 24.0
-						take = 0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
 						name = "deploy"
 						activity_name = "ACT_VM_DRAW"
 						activity_weight = 1
@@ -652,8 +631,8 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "dryfire"
-						activity_name = "ACT_VM_DRYFIRE"
+						name = "fire"
+						activity_name = "ACT_VM_PRIMARYATTACK"
 						activity_weight = 1
 						weight_list_name = "bonemask_default"
 						fade_in_time = 0.2
@@ -718,6 +697,10 @@
 							{
 								from = "toolgun3_is_unused.vmat"
 								to = "materials/weapons/v_toolgun/toolgun3.vmat"
+							},
+							{
+								from = "v_hand_sheet_is_unused.vmat"
+								to = "materials/weapons/v_hand/v_hand_sheet.vmat"
 							},
 						]
 						use_global_default = false

@@ -463,6 +463,8 @@ public partial class CarEntity : Prop, IUse
 		player.VehicleCamera = null;
 		player.Parent = null;
 
+		player.MainCamera = new FirstPersonCamera();
+
 		if ( player.PhysicsBody.IsValid() )
 		{
 			player.PhysicsBody.Enabled = true;

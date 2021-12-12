@@ -610,27 +610,6 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "attack"
-						activity_name = "ACT_VM_PRIMARYATTACK"
-						activity_weight = 1
-						weight_list_name = "bonemask_default"
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/toolgun_refs/anim/_attack1_1.dmx"
-						start_frame = -1
-						end_frame = -1
-						framerate = 24.0
-						take = 0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
 						name = "deploy"
 						activity_name = "ACT_VM_DRAW"
 						activity_weight = 1
@@ -652,7 +631,7 @@
 					},
 					{
 						_class = "AnimFile"
-						name = "dryfire"
+						name = "fire"
 						activity_name = "ACT_VM_DRYFIRE"
 						activity_weight = 1
 						weight_list_name = "bonemask_default"

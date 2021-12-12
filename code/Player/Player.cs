@@ -202,6 +202,11 @@ partial class SandboxPlayer : Player
 		{
 			timeSinceJumpReleased = 1;
 		}
+
+		if ( Input.Pressed( InputButton.Zoom ) )
+		{
+			Undo();
+		}
 	}
 
 	public override void StartTouch( Entity other )

@@ -28,7 +28,6 @@ public partial class ChairEntity : Prop, IUse
 
 	private InputState currentInput;
 
-
 	[Net] public Player Driver { get; private set; }
 
 	public override void Spawn()
@@ -123,6 +122,8 @@ public partial class ChairEntity : Prop, IUse
 		player.VehicleCamera = null;
 		player.Parent = null;
 
+		player.MainCamera = new FirstPersonCamera();
+
 		if ( player.PhysicsBody.IsValid() )
 		{
 			player.PhysicsBody.Enabled = true;
@@ -139,7 +140,7 @@ public partial class ChairEntity : Prop, IUse
 			player.VehicleAnimator = new ChairAnimator();
 			player.VehicleCamera = new ChairCamera();
 			player.Parent = this;
-			player.LocalPosition = Vector3.Up * 10;
+			player.LocalPosition = Vector3.Up * 5;
 			player.LocalRotation = Rotation.Identity;
 			player.LocalScale = 1;
 			player.PhysicsBody.Enabled = false;
