@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Sandbox;
+using Sandbox.UI;
 
 partial class SandboxPlayer
 {
@@ -25,6 +26,14 @@ partial class SandboxPlayer
 		
 		//Remove the key from the dictionary (NOT THE ENTITY)
 		UndoDictionary.Remove( UndoDictionary.ElementAt( UndoDictionary.Count - 1 ).Key );
+
+		UndoMessage();
+	}
+
+	public void UndoMessage(  )
+	{
+		//Say you undid something
+		ChatBox.AddInformation( To.Everyone, $"{Client.Name} has undone an entity", $"avatar:{Client.PlayerId}" );
 	}
 }
 
