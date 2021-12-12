@@ -26,14 +26,16 @@
 
 		void ShootBox()
 		{
-			var ent = new Prop
+			var ent = new BoxEntity()
 			{
-				Position = Owner.EyePos + Owner.EyeRot.Forward * 50,
+				Position = Owner.EyePos + Owner.EyeRot.Forward * 150,
 				Rotation = Owner.EyeRot
 			};
 
-			ent.SetModel( "models/citizen_props/crate01.vmdl" );
 			ent.Velocity = Owner.EyeRot.Forward * 1000;
+
+			var player = Owner as SandboxPlayer;
+			player.AddToUndo( ent );
 		}
 
 

@@ -77,6 +77,9 @@
 					.WithPivot( tr.EndPos )
 					.WithBasis( Rotation.LookAt( tr.Normal ) * Rotation.From( new Angles( 90, 0, 0 ) ) )
 					.Create();
+
+				var player = Owner as SandboxPlayer;
+				player.AddToUndo( ent );
 			}
 		}
 	}

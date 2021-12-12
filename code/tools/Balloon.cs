@@ -117,6 +117,9 @@
 					rope?.Destroy( true );
 					spring.Remove();
 				} );
+
+				var player = Owner as SandboxPlayer;
+				player.AddToUndo( ent );
 			}
 		}
 	}

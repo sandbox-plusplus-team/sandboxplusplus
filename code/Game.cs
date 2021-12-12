@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using Sandbox.UI;
 
 [Library( "sandbox", Title = "Sandbox" )]
 partial class SandboxGame : Game
@@ -36,9 +37,11 @@ partial class SandboxGame : Game
 
 	public override void ClientJoined( Client cl )
 	{
-		base.ClientJoined( cl );
 		var player = new SandboxPlayer( cl );
 		player.Respawn();
+
+		Log.Info( $"\"{cl.Name}\" has connected" );
+		ChatBox.AddInformation( To.Everyone, $"{cl.Name} has entered the cybeworld", $"avatar:{cl.PlayerId}" );
 
 		cl.Pawn = player;
 	}

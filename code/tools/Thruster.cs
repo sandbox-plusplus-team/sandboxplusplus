@@ -83,6 +83,9 @@
 				}
 
 				ent.SetModel( "models/thruster/thrusterprojector.vmdl" );
+
+				var player = Owner as SandboxPlayer;
+				player.AddToUndo( ent );
 			}
 		}
 	}
