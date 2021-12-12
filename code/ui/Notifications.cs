@@ -13,7 +13,7 @@ public partial class Notifications : Panel
 
 	public Notifications()
 	{
-		StyleSheet.Load( "/ui/notifications.scss" );
+		StyleSheet.Load( "/ui/Notifications.scss" );
 		Instance = this;
 	}
 
