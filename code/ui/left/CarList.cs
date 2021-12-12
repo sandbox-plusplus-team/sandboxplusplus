@@ -25,7 +25,7 @@ public partial class Cars : Panel
 			btn.Style.BackgroundImage = Texture.Load( $"/entity/{entry.Name}.png", false );
 		};
 
-		var cars = Library.GetAllAttributes<Prop>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
+		var cars = Library.GetAllAttributes<CarEntity>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
 
 		foreach ( var entry in cars )
 		{

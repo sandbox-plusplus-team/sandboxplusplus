@@ -27,19 +27,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\d_tho\\.nuget\\packages\\": {}
+    "C:\\Users\\mancu\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\sandboxplusplus\\code\\sandboxplusplus.csproj",
-      "projectName": "sandboxplusplus",
-      "projectPath": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\sandboxplusplus\\code\\sandboxplusplus.csproj",
-      "packagesPath": "C:\\Users\\d_tho\\.nuget\\packages\\",
-      "outputPath": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\sandboxplusplus\\code\\obj\\",
+      "projectUniqueName": "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\sbox-plusplus\\code\\sbox-plusplus.csproj",
+      "projectName": "sbox-plusplus",
+      "projectPath": "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\sbox-plusplus\\code\\sbox-plusplus.csproj",
+      "packagesPath": "C:\\Users\\mancu\\.nuget\\packages\\",
+      "outputPath": "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\sbox-plusplus\\code\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\d_tho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mancu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +58,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\base\\code\\base.csproj": {
-              "projectPath": "D:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\base\\code\\base.csproj"
+            "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\base\\code\\base.csproj": {
+              "projectPath": "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\base\\code\\base.csproj"
             }
           }
         }
@@ -83,7 +88,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
       }
     }
   }
