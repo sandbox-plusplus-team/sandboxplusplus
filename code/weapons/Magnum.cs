@@ -5,8 +5,7 @@ partial class Magnum : Weapon
 {
 	public override string ViewModelPath => "models/weapons/v_357.vmdl";
 
-	public override float PrimaryRate => 5.0f;
-	public override float SecondaryRate => 1.0f;
+	public override float PrimaryRate => 1.35f;
 
 	public TimeSince TimeSinceDischarge { get; set; }
 

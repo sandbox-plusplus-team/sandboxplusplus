@@ -11,7 +11,7 @@ partial class SandboxPlayer
 	{
 		UndoDictionary.Add( ent, UndoDictionary.Count);
 	}
-	
+
 	//On zoom key pressed, undo the last spawned entity (can be prop etc.)
 	public void Undo()
 	{
