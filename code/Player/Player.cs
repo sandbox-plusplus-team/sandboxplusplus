@@ -205,7 +205,7 @@ partial class SandboxPlayer : Player
 
 		if ( Input.Pressed( InputButton.Zoom ) )
 		{
-			Undo();
+			Undo(false);
 		}
 	}
 

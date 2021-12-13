@@ -14,7 +14,7 @@ partial class SandboxPlayer
 
 			while (player.UndoDictionary.Count > 0)
 			{
-				player.Undo();
+				player.Undo( true );
 			}	
 		}			
 	}
@@ -35,7 +35,7 @@ partial class SandboxPlayer
 					break;
 
 				while ( player.UndoDictionary.Count > 0 )
-					player.Undo();
+					player.Undo( true );
 			}
 		}
 			

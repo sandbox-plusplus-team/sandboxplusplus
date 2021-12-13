@@ -64,6 +64,10 @@ namespace Sandbox.UI
 			if ( string.IsNullOrWhiteSpace( msg ) )
 				return;
 
+			Say( msg );
+
+			/*
+			 * Whatever Global.Lobby is, the above code shouldn't dupe the message
 			if ( Global.Lobby != null )
 			{
 				Log.Info( "Send Chat" );
@@ -73,6 +77,7 @@ namespace Sandbox.UI
 			{
 				Say( msg );
 			}
+			*/
 		}
 
 		public void AddEntry( string name, string message, string avatar, string lobbyState = null )

@@ -14,7 +14,7 @@ partial class SandboxPlayer
 	}
 
 	//On zoom key pressed, undo the last spawned entity (can be prop etc.)
-	public void Undo()
+	public void Undo(bool isCMDExecuted)
 	{
 		if ( UndoDictionary.Count <= 0 )
 			return;
@@ -27,13 +27,17 @@ partial class SandboxPlayer
 		//Remove the key from the dictionary (NOT THE ENTITY)
 		UndoDictionary.Remove( UndoDictionary.ElementAt( UndoDictionary.Count - 1 ).Key );
 
-		UndoMessage();
+		if ( isCMDExecuted == true )
+			return;
+		else
+			UndoMessage( $"{Client.Name} despawned an entity/prop" );
+
 	}
 
-	public void UndoMessage(  )
+	public void UndoMessage(string message)
 	{
 		//Say you undid something
-		ChatBox.AddInformation( To.Everyone, $"{Client.Name} has undone an entity", $"avatar:{Client.PlayerId}" );
+		ChatBoxPlus.AddInformation( To.Everyone, message, $"avatar:{Client.PlayerId}" );
 	}
 }
 
