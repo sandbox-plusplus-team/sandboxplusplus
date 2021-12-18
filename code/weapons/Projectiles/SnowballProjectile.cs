@@ -1,7 +1,7 @@
 ﻿using System;
 using Sandbox;
 
-	[Library("sf_snowball_projectile")]
+	[Library("sf_snowball_projectile", Spawnable = true )]
 	[Hammer.Skip]
 partial class SnowballProjctile : Prop
 {
