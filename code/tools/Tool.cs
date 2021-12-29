@@ -129,5 +129,12 @@ namespace Sandbox.Tools
 		{
 			Parent?.CreateHitEffects( pos );
 		}
+
+		public string GetConvarValue( string name, string defaultValue = null )
+		{
+			return Host.IsServer
+				? Owner.GetClientOwner().GetClientData( name, defaultValue )
+				: ConsoleSystem.GetValue( name, default );
+		}
 	}
 }

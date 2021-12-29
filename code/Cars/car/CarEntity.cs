@@ -77,7 +77,7 @@ public partial class CarEntity : Prop, IUse
 	{
 		base.Spawn();
 
-		var modelName = "entities/modular_vehicle/chassis_2_main.vmdl";
+		var modelName = "models/car/car.vmdl";
 
 		SetModel( modelName );
 		SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
@@ -489,7 +489,7 @@ public partial class CarEntity : Prop, IUse
 			driver = player;
 		}
 
-		return true;
+		return false;
 	}
 
 	public bool IsUsable( Entity user )
@@ -524,7 +524,7 @@ public partial class CarEntity : Prop, IUse
 				Entity = player,
 				Pos = player.Position + Vector3.Up * 50,
 				Velocity = velocity,
-				PreVelocity = velocity * 20.0f, // I don't know why the ragdolls now need more force
+				PreVelocity = velocity,
 				PostVelocity = velocity,
 				PreAngularVelocity = angularVelocity,
 				Speed = speed,
