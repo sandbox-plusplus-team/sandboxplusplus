@@ -104,5 +104,6 @@ partial class Crowbar : Weapon
 	{
 		anim.SetParam("holdtype", 4);
 		anim.SetParam("aimat_weight", 1.0f);
+		anim.SetParam( "holdtype_handedness", 1 );
 	}
 }

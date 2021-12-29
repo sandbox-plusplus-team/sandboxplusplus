@@ -1,8 +1,8 @@
 ﻿using Sandbox;
 using System;
 
-[Library( "ent_drone", Title = "Drone", Spawnable = true )]
-public partial class DroneEntity : Prop
+[Library( "ent_drone", Title = "Drone", Spawnable = true, Group = "Vehicles" )]
+public partial class DroneEntity : Prop, IUse
 {
 	public virtual float altitudeAcceleration => 2000;
 	public virtual float movementAcceleration => 5000;
@@ -38,12 +38,14 @@ public partial class DroneEntity : Prop
 	}
 
 	[Event.Physics.PostStep]
-	protected void ApplyForces()
+	public void OnPostPhysicsStep()
 	{
 		if ( !PhysicsBody.IsValid() )
 		{
 			return;
 		}
+
+		if ( Driver == null ) return;
 
 		var body = PhysicsBody;
 		var transform = Transform;
@@ -97,11 +99,21 @@ public partial class DroneEntity : Prop
 
 		using ( Prediction.Off() )
 		{
+			if ( Input.Pressed( InputButton.Use ) )
+			{
+				if ( owner.Pawn is SandboxPlayer player && !player.IsUseDisabled() )
+				{
+					RemoveDriver( player );
+
+					return;
+				}
+			}
+
 			currentInput.Reset();
 			var x = (Input.Down( InputButton.Forward ) ? -1 : 0) + (Input.Down( InputButton.Back ) ? 1 : 0);
 			var y = (Input.Down( InputButton.Right ) ? 1 : 0) + (Input.Down( InputButton.Left ) ? -1 : 0);
 			currentInput.movement = new Vector3( x, y, 0 ).Normal;
-			currentInput.throttle = (Input.Down( InputButton.Run ) ? 1 : 0) + (Input.Down( InputButton.Duck ) ? -1 : 0);
+			currentInput.throttle = (Input.Down( InputButton.Run ) | Input.Down( InputButton.Jump ) ? 1 : 0) + (Input.Down( InputButton.Duck ) ? -1 : 0);
 			currentInput.yaw = -Input.MouseDelta.x;
 		}
 	}
@@ -133,8 +145,11 @@ public partial class DroneEntity : Prop
 	[Event.Frame]
 	public void OnFrame()
 	{
-		spinAngle += 10000.0f * Time.Delta;
-		spinAngle %= 360.0f;
+		if ( Driver != null )
+		{
+			spinAngle += 10000.0f * Time.Delta;
+			spinAngle %= 360.0f;
+		}
 
 		for ( int i = 0; i < turbinePositions.Length; ++i )
 		{
@@ -142,5 +157,60 @@ public partial class DroneEntity : Prop
 			transform.Scale = Scale;
 			SetBoneTransform( i, transform );
 		}
+	}
+
+	[Net]
+	Entity Driver { get; set; }
+	public bool OnUse( Entity user )
+	{
+		if ( user is SandboxPlayer player && player.Vehicle == null )
+		{
+			player.Vehicle = this;
+			player.VehicleController = new DroneController();
+			player.VehicleCamera = new DroneCamera();
+			player.Animator = null;
+
+			Driver = player;
+			StartSounds();
+		}
+
+		return true;
+	}
+
+	public bool IsUsable( Entity user )
+	{
+		return Driver == null;
+	}
+
+	private void RemoveDriver( SandboxPlayer player )
+	{
+		Driver = null;
+		player.Vehicle = null;
+		player.VehicleController = null;
+		player.Animator = new StandardPlayerAnimator();
+		player.VehicleCamera = null;
+		player.Parent = null;
+		player.PhysicsBody.Enabled = true;
+
+		player.MainCamera = new FirstPersonCamera();
+
+		StopSounds();
+	}
+
+	protected override void OnDestroy()
+	{
+		base.OnDestroy();
+
+		if ( Driver is SandboxPlayer player )
+		{
+			RemoveDriver( player );
+		}
+	}
+
+	public override void TakeDamage( DamageInfo info )
+	{
+		base.TakeDamage( info );
+
+		PlaySound( "drone-hit" );
 	}
 }
