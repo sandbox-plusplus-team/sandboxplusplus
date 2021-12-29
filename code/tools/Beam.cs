@@ -1,12 +1,12 @@
 ﻿namespace Sandbox.Tools
 {
-	[Library( "tool_rope", Title = "Rope", Description = "Joins two things together", Group = "construction" )]
-	public partial class RopeTool : BaseTool
+	[Library( "tool_beam", Title = "Beam", Description = "A cooler looking rope", Group = "construction" )]
+	public partial class BeamTool : BaseTool
 	{
 		private PhysicsBody targetBody;
 		private int targetBone;
 		private Vector3 localOrigin1;
-		private Vector3 globalOrigin1;	
+		private Vector3 globalOrigin1;
 
 		public override void Simulate()
 		{
@@ -52,7 +52,7 @@
 				if ( targetBody == tr.Body )
 					return;
 
-				var rope = Particles.Create("particles/rope.vpcf");
+				var rope = Particles.Create("particles/physgun_beam.vpcf");
 
 				if ( targetBody.Entity.IsWorld )
 				{

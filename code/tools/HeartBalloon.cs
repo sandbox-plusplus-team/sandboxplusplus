@@ -1,7 +1,7 @@
-namespace Sandbox.Tools
+﻿namespace Sandbox.Tools
 {
-	[Library( "tool_terryballoon", Title = "Colored Terry Deployer", Description = "Deploy a Colored Terry! (Left click to have it attached to a beam. Right click to not.)", Group = "fun" )]
-	public partial class TerryBalloonTool : BaseTool
+	[Library( "tool_heartballoon", Title = "Heart Balloons", Description = "Create Heart Balloons!", Group = "construction" )]
+	public partial class HeartBalloonTool : BaseTool
 	{
 		[Net]
 		public Color Tint { get; set; }
@@ -23,12 +23,15 @@ namespace Sandbox.Tools
 			if ( !base.IsPreviewTraceValid( tr ) )
 				return false;
 
+			if ( tr.Entity is BalloonEntity )
+				return false;
+
 			return true;
 		}
 
 		public override void CreatePreviews()
 		{
-			if ( TryCreatePreview( ref previewModel, "models/terrybaloon.vmdl") )
+			if ( TryCreatePreview( ref previewModel, "models/citizen_props/balloonheart01.vmdl") )
 			{
 				previewModel.RelativeToNormal = false;
 			}
@@ -68,13 +71,13 @@ namespace Sandbox.Tools
 				if ( tr.Entity is BalloonEntity )
 					return;
 
-				var ent = new BalloonEntity
+				var ent = new TubeBalloonEntity
 				{
 					Position = tr.EndPos,
 				};
 
-				ent.SetModel("models/terrybaloon.vmdl");
-				ent.PhysicsBody.GravityScale = -50000000000000000000000.2f;
+				ent.SetModel("models/citizen_props/balloonheart01.vmdl");
+				ent.PhysicsBody.GravityScale = -0.2f;
 				ent.RenderColor = Tint;
 
 				Tint = Color.Random;
@@ -82,7 +85,7 @@ namespace Sandbox.Tools
 				if ( !useRope )
 					return;
 
-				var rope = Particles.Create("particles/physgun_beam.vpcf");
+				var rope = Particles.Create( "particles/rope.vpcf" );
 				rope.SetEntity( 0, ent );
 
 				var attachEnt = tr.Body.IsValid() ? tr.Body.Entity : tr.Entity;
