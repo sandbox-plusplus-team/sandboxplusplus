@@ -37,7 +37,7 @@ partial class SandboxPlayer
 	public void UndoMessage(string message)
 	{
 		//Say you undid something
-		ChatBoxPlus.AddInformation( To.Everyone, message, $"avatar:{Client.PlayerId}" );
+		ClassicChatBox.AddInformation( To.Everyone, message, $"avatar:{Client.PlayerId}" );
 	}
 }
 

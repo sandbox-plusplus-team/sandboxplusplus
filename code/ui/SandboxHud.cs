@@ -13,7 +13,7 @@ public partial class SandboxHud : HudEntity<RootPanel>
 
 		RootPanel.AddChild<NameTags>();
 		RootPanel.AddChild<CrosshairCanvas>();
-		RootPanel.AddChild<ChatBoxPlus>();
+		RootPanel.AddChild<ClassicChatBox>();
 		RootPanel.AddChild<VoiceList>();
 		RootPanel.AddChild<KillFeedCustom>();
 		RootPanel.AddChild<Scoreboard<ScoreboardEntry>>();
