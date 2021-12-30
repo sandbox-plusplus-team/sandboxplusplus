@@ -13,7 +13,6 @@ public partial class SandboxHud : HudEntity<RootPanel>
 
 		RootPanel.AddChild<NameTags>();
 		RootPanel.AddChild<CrosshairCanvas>();
-		RootPanel.AddChild<ClassicChatBox>();
 		RootPanel.AddChild<VoiceList>();
 		RootPanel.AddChild<KillFeedCustom>();
 		RootPanel.AddChild<Scoreboard<ScoreboardEntry>>();
@@ -23,5 +22,6 @@ public partial class SandboxHud : HudEntity<RootPanel>
 		RootPanel.AddChild<SpawnMenu>();
 		RootPanel.AddChild<Compass>();
 		RootPanel.AddChild<CMenu>();
+		RootPanel.AddChild<ClassicChatBox>();
 	}
 }
