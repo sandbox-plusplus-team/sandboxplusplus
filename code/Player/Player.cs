@@ -54,7 +54,7 @@ partial class SandboxPlayer : Player
 		Controller = new WalkController();
 		Animator = new StandardPlayerAnimator();
 
-		MainCamera = LastCamera;
+		MainCamera = new FirstPersonCamera();
 		Camera = MainCamera;
 
 		if ( DevController is NoclipController )
@@ -88,11 +88,6 @@ partial class SandboxPlayer : Player
 			Particles.Create( "particles/impact.flesh-big.vpcf", lastDamage.Position );
 			PlaySound( "kersplat" );
 		}
-
-		VehicleController = null;
-		VehicleAnimator = null;
-		VehicleCamera = null;
-		Vehicle = null;
 
 		BecomeRagdollOnClient( Velocity, lastDamage.Flags, lastDamage.Position, lastDamage.Force, GetHitboxBone( lastDamage.HitboxIndex ) );
 		LastCamera = MainCamera;
