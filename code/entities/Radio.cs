@@ -2,6 +2,7 @@
 using System;
 
 [Library( "ent_radio", Title = "Portal Radio", Spawnable = true )]
+[Hammer.EditorModel("models/props/portal/radio_remade.vmdl")]
 public partial class RadioEntity : Prop, IUse
 {
 
