@@ -13,17 +13,15 @@ public partial class SpawnList : Panel
 		AddChild( out Canvas, "canvas" );
 
 		Canvas.Layout.AutoColumns = true;
-		Canvas.Layout.ItemSize = new Vector2( 100, 100 );
+		Canvas.Layout.ItemWidth = 100;
+		Canvas.Layout.ItemHeight = 100;
+
 		Canvas.OnCreateCell = ( cell, data ) =>
 		{
 			var file = (string)data;
 			var panel = cell.Add.Panel( "icon" );
-			panel.AddEventListener( "onclick", () => 
-			{
-				ConsoleSystem.Run("spawn", "models/" + file);
-				Sound.FromScreen("ui.button.press");
-			} );
-			panel.Style.BackgroundImage = Texture.Load( $"/models/{file}_c.png", false );
+			panel.AddEventListener( "onclick", () => ConsoleSystem.Run( "spawn", "models/" + file ) );
+			panel.Style.BackgroundImage = Texture.Load( FileSystem.Mounted, $"/models/{file}_c.png", false );
 		};
 
 		LoadAllItem(false);

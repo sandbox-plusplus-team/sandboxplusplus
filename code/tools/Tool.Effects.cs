@@ -5,7 +5,7 @@ public partial class Tool
 	[ClientRpc]
 	public void CreateHitEffects( Vector3 hitPos )
 	{
-		var particle = Particles.Create( "particles/tool_select_hit.vpcf", hitPos );
+		var particle = Particles.Create( "particles/entity/player_teleport_sparks.vpcf", hitPos );
 		particle.SetPosition( 0, hitPos );
 		particle.Destroy( false );
 
