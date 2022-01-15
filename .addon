@@ -1,4 +1,15 @@
 {
-	"sharedassets": "*.*",
-	"ident": "gman.sbox_plusplus"
+  "SharedAssets": null,
+  "Title": "Sandbox Plus plus",
+  "Type": "game",
+  "Org": "local",
+  "Ident": "sbox-plusplus",
+  "FullIdent": "local.sbox-plusplus",
+  "Schema": 1,
+  "NeedsUpgrade": false,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "HasCode": true,
+  "CodePath": "code",
+  "RootNamespace": "SboxPlusPlus"
 }

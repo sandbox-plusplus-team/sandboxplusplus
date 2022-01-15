@@ -26,6 +26,7 @@
   <PropertyGroup>
 	<OutputPath>../.vs/output/</OutputPath>
 	<DocumentationFile>../.vs/output/sbox-plusplus.xml</DocumentationFile>
+	<RootNamespace>SboxPlusPlus</RootNamespace>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -38,7 +39,7 @@
 	</ItemGroup>
 
   <ItemGroup>
-<ProjectReference Include="..\..\..\addons\base\code\base.csproj" />
+<ProjectReference Include="D:\SteamGames\steamapps\common\sbox\addons\base\code\base.csproj" />
   </ItemGroup>
 
 </Project>
