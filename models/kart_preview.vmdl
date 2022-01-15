@@ -22,7 +22,13 @@
 						import_filter = 
 						{
 							exclude_by_default = false
-							exception_list = [  ]
+							exception_list = 
+							[
+								"mesh4",
+								"mesh3",
+								"mesh2",
+								"mesh1",
+							]
 						}
 					},
 				]
