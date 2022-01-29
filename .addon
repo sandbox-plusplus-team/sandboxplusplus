@@ -7,7 +7,9 @@
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
-  "ResourcePaths": null,
+  "ResourcePaths": [
+    "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\sbox-plusplus\\code\\ui"
+  ],
   "HasCode": true,
   "CodePath": "code",
   "RootNamespace": "SboxPlusPlus"
