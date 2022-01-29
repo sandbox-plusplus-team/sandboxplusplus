@@ -1,12 +1,13 @@
 {
-  "SharedAssets": null,
+  "SharedAssets": "",
   "Title": "Sandbox Plus plus",
   "Type": "game",
-  "Org": "local",
-  "Ident": "sbox-plusplus",
+  "Org": "gman",
+  "Ident": "sbox_plusplus",
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
+  "ResourcePaths": null,
   "HasCode": true,
   "CodePath": "code",
   "RootNamespace": "SboxPlusPlus"

@@ -33,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\sbox-plusplus\\code\\sbox-plusplus.csproj",
-      "projectName": "sbox-plusplus",
-      "projectPath": "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\sbox-plusplus\\code\\sbox-plusplus.csproj",
+      "projectUniqueName": "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\sbox-plusplus\\code\\sbox_plusplus.csproj",
+      "projectName": "sbox_plusplus",
+      "projectPath": "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\sbox-plusplus\\code\\sbox_plusplus.csproj",
       "packagesPath": "C:\\Users\\mancu\\.nuget\\packages\\",
       "outputPath": "D:\\SteamGames\\steamapps\\common\\sbox\\addons\\sbox-plusplus\\code\\obj\\",
       "projectStyle": "PackageReference",
