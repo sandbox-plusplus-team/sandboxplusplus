@@ -2,7 +2,7 @@
   "Title": "S\u0026box\u002B\u002B Redo",
   "Type": "game",
   "Org": "gman",
-  "Ident": "sbox_plusplus",
+  "Ident": "spp_refactor",
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
