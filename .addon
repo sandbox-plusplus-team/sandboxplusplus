@@ -1,6 +1,5 @@
 {
-  "SharedAssets": "",
-  "Title": "Sandbox Plus plus",
+  "Title": "S\u0026box\u002B\u002B Redo",
   "Type": "game",
   "Org": "gman",
   "Ident": "sbox_plusplus",
@@ -12,5 +11,10 @@
   ],
   "HasCode": true,
   "CodePath": "code",
-  "RootNamespace": "SboxPlusPlus"
+  "RootNamespace": "SboxPlusPlus",
+  "Metadata": {
+    "MapList": [
+      "facepunch.construct"
+    ]
+  }
 }

@@ -24,28 +24,13 @@ public partial class SpawnList : Panel
 			panel.Style.BackgroundImage = Texture.Load( FileSystem.Mounted, $"/models/{file}_c.png", false );
 		};
 
-		LoadAllItem(false);
-	}
-
-	private void LoadAllItem(bool isreload)
-	{
-		if (isreload)
-			Canvas.Data.Clear();
-
-		foreach (var file in FileSystem.Mounted.FindFile("models", "*.vmdl_c.png", true))
+		foreach ( var file in FileSystem.Mounted.FindFile( "models", "*.vmdl_c.png", true ) )
 		{
-			if (string.IsNullOrWhiteSpace(file)) continue;
-			if (file.Contains("_lod0")) continue;
-			if (file.Contains("clothes")) continue;
+			if ( string.IsNullOrWhiteSpace( file ) ) continue;
+			if ( file.Contains( "_lod0" ) ) continue;
+			if ( file.Contains( "clothes" ) ) continue;
 
-			Canvas.AddItem(file.Remove(file.Length - 6));
+			Canvas.AddItem( file.Remove( file.Length - 6 ) );
 		}
-	}
-
-	public override void OnHotloaded()
-	{
-		base.OnHotloaded();
-
-		LoadAllItem(true);
 	}
 }

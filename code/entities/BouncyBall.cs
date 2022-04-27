@@ -13,7 +13,7 @@ public partial class BouncyBallEntity : Prop, IUse
 
 		SetModel( "models/ball/ball.vmdl" );
 		SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-		Scale = Rand.Float( 1.5f, 9.0f );
+		Scale = Rand.Float( 0.5f, 2.0f );
 		RenderColor = Color.Random;
 	}
 
@@ -37,8 +37,6 @@ public partial class BouncyBallEntity : Prop, IUse
 
 			Delete();
 		}
-
-		Sound.FromScreen("ui.button.press");
 
 		return false;
 	}

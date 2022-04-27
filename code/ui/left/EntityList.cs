@@ -26,26 +26,11 @@ public partial class EntityList : Panel
 			btn.Style.BackgroundImage = Texture.Load( FileSystem.Mounted, $"/entity/{entry.Name}.png", false );
 		};
 
-		LoadAllItem(false);
-	}
+		var ents = Library.GetAllAttributes<Entity>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
 
-	private void LoadAllItem(bool isreload)
-	{
-		if (isreload)
-			Canvas.Data.Clear();
-
-		var ents = Library.GetAllAttributes<Entity>().Where(x => x.Spawnable).OrderBy(x => x.Title).ToArray();
-
-		foreach (var entry in ents)
+		foreach ( var entry in ents )
 		{
-			Canvas.AddItem(entry);
+			Canvas.AddItem( entry );
 		}
-	}
-
-	public override void OnHotloaded()
-	{
-		base.OnHotloaded();
-
-		LoadAllItem(true);
 	}
 }

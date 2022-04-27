@@ -8,7 +8,6 @@ public class Health : Panel
 
 	public Health()
 	{
-		Add.Label( "🩸", "icon" );
 		Label = Add.Label( "100", "value" );
 	}
 

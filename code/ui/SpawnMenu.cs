@@ -1,21 +1,13 @@
-﻿using System.Runtime.CompilerServices;
-using System.Threading;
-
-using Sandbox;
+﻿using Sandbox;
 using Sandbox.Tools;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
-using System;
-using System.Reflection.Metadata;
-using System.Threading.Tasks;
-using System.Linq;
-using System.Collections.Generic;
+
 
 [Library]
 public partial class SpawnMenu : Panel
 {
 	public static SpawnMenu Instance;
-	public readonly Form inspector;
 	readonly Panel toollist;
 
 	public SpawnMenu()
@@ -36,16 +28,10 @@ public partial class SpawnMenu : Panel
 				tabs.SelectedButton = tabs.AddButtonActive( "Props", ( b ) => props.SetClass( "active", b ) );
 
 				var ents = body.AddChild<EntityList>();
-				tabs.AddButtonActive( "All Entities", ( b ) => ents.SetClass( "active", b ) );
+				tabs.AddButtonActive( "Entities", ( b ) => ents.SetClass( "active", b ) );
 
-				var cars = body.AddChild<Cars>();
-				tabs.AddButtonActive( "Vehicles", ( b ) => cars.SetClass( "active", b ) );
-
-				var wpn = body.AddChild<WeaponList>();
-				tabs.AddButtonActive( "Weapons", ( b ) => wpn.SetClass( "active", b ) );
-
-				var npc = body.AddChild<NpcList>();
-				tabs.AddButtonActive( "Npcs", ( b ) => npc.SetClass( "active", b ) );
+				var models = body.AddChild<CloudModelList>();
+				tabs.AddButtonActive( "s&works", ( b ) => models.SetClass( "active", b ) );
 			}
 		}
 
@@ -59,15 +45,36 @@ public partial class SpawnMenu : Panel
 			var body = right.Add.Panel( "body" );
 			{
 				toollist = body.Add.Panel( "toollist" );
-				var insp = body.Add.Panel( "inspector" );
-				insp.StyleSheet.Load( "/styles/UITests.scss" );
-				insp.AddChild( inspector = new Form() );
 				{
 					RebuildToolList();
 				}
+				body.Add.Panel( "inspector" );
 			}
 		}
 
+	}
+
+	void RebuildToolList()
+	{
+		toollist.DeleteChildren( true );
+
+		foreach ( var entry in Library.GetAllAttributes<BaseTool>() )
+		{
+			if ( entry.Title == "BaseTool" )
+				continue;
+
+			var button = toollist.Add.Button( entry.Title );
+			button.SetClass( "active", entry.Name == ConsoleSystem.GetValue( "tool_current" ) );
+
+			button.AddEventListener( "onclick", () =>
+			{
+				ConsoleSystem.Run( "tool_current", entry.Name );
+				ConsoleSystem.Run( "inventory_current", "weapon_tool" );
+
+				foreach ( var child in toollist.Children )
+					child.SetClass( "active", child == button );
+			} );
+		}
 	}
 
 	public override void Tick()
@@ -75,76 +82,22 @@ public partial class SpawnMenu : Panel
 		base.Tick();
 
 		Parent.SetClass( "spawnmenuopen", Input.Down( InputButton.Menu ) );
+
+		UpdateActiveTool();
 	}
 
-	void RebuildToolList()
+	void UpdateActiveTool()
 	{
-		toollist.DeleteChildren( true );
-		inspector.DeleteChildren( true );
-		toolButtons.Clear();
+		var toolCurrent = ConsoleSystem.GetValue( "tool_current" );
+		var tool = string.IsNullOrWhiteSpace( toolCurrent ) ? null : Library.GetAttribute( toolCurrent );
 
-		foreach ( var kv in Library.GetAllAttributes<Sandbox.Tools.BaseTool>().GroupBy( x => x.Group ) )
+		foreach ( var child in toollist.Children )
 		{
-
-			toollist.Add.Label( kv.Key, "category" );
-
-			foreach ( var entry in kv )
+			if ( child is Button button )
 			{
-				if ( entry.Title == "BaseTool" )
-					continue;
-
-				var button = toollist.Add.Button( entry.Title );
-				toolButtons.Add( (button, entry.Name) );
-				button.SetClass( "active", entry.Name == ConsoleSystem.GetValue( "tool_current" ) );
-
-				button.AddEventListener( "onclick", () =>
-				{
-					if ( !button.HasClass( "active" ) )
-					{
-						GetCurrentTool()?.ClearControls( inspector );
-						inspector.DeleteChildren( true );
-					}
-					ConsoleSystem.Run( "tool_current", entry.Name );
-					ConsoleSystem.Run( "inventory_current", "weapon_tool" );
-
-					foreach ( var child in toollist.Children )
-						child.SetClass( "active", child == button );
-
-
-				} );
+				child.SetClass( "active", tool != null && button.Text == tool.Title );
 			}
 		}
-	}
-
-	BaseTool GetCurrentTool()
-	{
-		var player = Local.Pawn;
-		if ( player == null ) return null;
-
-		var inventory = player.Inventory;
-		if ( inventory == null ) return null;
-
-		if ( inventory.Active is not Tool tool ) return null;
-
-		return tool?.CurrentTool;
-	}
-
-	List<(Button button, string tool)> toolButtons = new();
-	public void UpdateToolsVisible()
-	{
-		try
-		{
-
-		}
-		catch (Exception) { }
-		try
-		{
-			foreach ((var button, var tool) in toolButtons)
-			{
-
-			}
-		}
-		catch (Exception) { }
 	}
 
 	public override void OnHotloaded()
@@ -153,5 +106,4 @@ public partial class SpawnMenu : Panel
 
 		RebuildToolList();
 	}
-
 }

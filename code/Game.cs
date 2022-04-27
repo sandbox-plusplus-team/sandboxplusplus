@@ -1,31 +1,9 @@
 ﻿using Sandbox;
-using Sandbox.UI;
+using System.Linq;
+using System.Threading.Tasks;
 
-[Library( "sandbox", Title = "Sandbox" )]
 partial class SandboxGame : Game
 {
-
-	[ConVar.Replicated( "replicatormelons_max" )]
-	public static int MaxMelons { get; set; } = 150;
-
-	[ClientRpc]
-	public void PlaySoundFromScreen(string name, double x = 0.5, double y = 0.5)
-	{
-		Sound.FromScreen(name, (float)x, (float)y);
-	}
-
-	[ClientRpc]
-	public void PlaySoundFromWorld(string name, Vector3 position)
-	{
-		Sound.FromWorld(name, position);
-	}
-
-	[ClientRpc]
-	public void PlaySoundFromEntity(string name, Entity entity)
-	{
-		Sound.FromEntity(name, entity);
-	}
-
 	public SandboxGame()
 	{
 		if ( IsServer )
@@ -37,11 +15,9 @@ partial class SandboxGame : Game
 
 	public override void ClientJoined( Client cl )
 	{
+		base.ClientJoined( cl );
 		var player = new SandboxPlayer( cl );
 		player.Respawn();
-
-		Log.Info( $"\"{cl.Name}\" has connected" );
-		ChatBox.AddInformation( To.Everyone, $"{cl.Name} has entered the cybeworld", $"avatar:{cl.PlayerId}" );
 
 		cl.Pawn = player;
 	}
@@ -52,32 +28,76 @@ partial class SandboxGame : Game
 	}
 
 	[ServerCmd( "spawn" )]
-	public static void Spawn( string modelname )
+	public static async Task Spawn( string modelname )
 	{
 		var owner = ConsoleSystem.Caller?.Pawn;
 
 		if ( ConsoleSystem.Caller == null )
 			return;
 
-		var tr = Trace.Ray( owner.EyePos, owner.EyePos + owner.EyeRot.Forward * 500 )
+		var tr = Trace.Ray( owner.EyePosition, owner.EyePosition + owner.EyeRotation.Forward * 500 )
 			.UseHitboxes()
 			.Ignore( owner )
 			.Run();
 
-		var ent = new Prop();
-		ent.Position = tr.EndPos;
-		ent.Rotation = Rotation.From( new Angles( 0, owner.EyeRot.Angles().yaw, 0 ) ) * Rotation.FromAxis( Vector3.Up, 180 );
-		ent.SetModel( modelname );
-		ent.Position = tr.EndPos - Vector3.Up * ent.CollisionBounds.Mins.z;
+		var modelRotation = Rotation.From( new Angles( 0, owner.EyeRotation.Angles().yaw, 0 ) ) * Rotation.FromAxis( Vector3.Up, 180 );
 
-		if ( owner is SandboxPlayer player )
-			player.AddToUndo( ent );
+		//
+		// Does this look like a package?
+		//
+		if ( modelname.Count( x => x == '.' ) == 1 && !modelname.EndsWith( ".vmdl", System.StringComparison.OrdinalIgnoreCase ) && !modelname.EndsWith( ".vmdl_c", System.StringComparison.OrdinalIgnoreCase ) )
+		{
+			modelname = await SpawnPackageModel( modelname, tr.EndPosition, modelRotation, owner );
+			if ( modelname == null )
+				return;
+		}
+
+		var model = Model.Load( modelname );
+		if ( model == null || model.IsError )
+			return;
+
+		var ent = new Prop
+		{
+			Position = tr.EndPosition + Vector3.Down * model.PhysicsBounds.Mins.z,
+			Rotation = modelRotation,
+			Model = model
+		};
+
+		// Let's make sure physics are ready to go instead of waiting
+		ent.SetupPhysicsFromModel( PhysicsMotionType.Dynamic );
+
+		// If there's no physics model, create a simple OBB
+		if ( !ent.PhysicsBody.IsValid() )
+		{
+			ent.SetupPhysicsFromOBB( PhysicsMotionType.Dynamic, ent.CollisionBounds.Mins, ent.CollisionBounds.Maxs );
+		}
+	}
+
+	static async Task<string> SpawnPackageModel( string packageName, Vector3 pos, Rotation rotation, Entity source )
+	{
+		var package = await Package.Fetch( packageName, false );
+		if ( package == null || package.PackageType != Package.Type.Model || package.Revision == null )
+		{
+			// spawn error particles
+			return null;
+		}
+
+		if ( !source.IsValid ) return null; // source entity died or disconnected or something
+
+		var model = package.GetMeta( "PrimaryAsset", "models/dev/error.vmdl" );
+		var mins = package.GetMeta( "RenderMins", Vector3.Zero );
+		var maxs = package.GetMeta( "RenderMaxs", Vector3.Zero );
+
+		// downloads if not downloads, mounts if not mounted
+		await package.MountAsync();
+
+		return model;
 	}
 
 	[ServerCmd( "spawn_entity" )]
 	public static void SpawnEntity( string entName )
 	{
-		var owner = ConsoleSystem.Caller.Pawn;
+		var owner = ConsoleSystem.Caller.Pawn as Player;
 
 		if ( owner == null )
 			return;
@@ -87,7 +107,7 @@ partial class SandboxGame : Game
 		if ( attribute == null || !attribute.Spawnable )
 			return;
 
-		var tr = Trace.Ray( owner.EyePos, owner.EyePos + owner.EyeRot.Forward * 200 )
+		var tr = Trace.Ray( owner.EyePosition, owner.EyePosition + owner.EyeRotation.Forward * 200 )
 			.UseHitboxes()
 			.Ignore( owner )
 			.Size( 2 )
@@ -100,11 +120,8 @@ partial class SandboxGame : Game
 				return;
 		}
 
-		ent.Position = tr.EndPos;
-		ent.Rotation = Rotation.From( new Angles( 0, owner.EyeRot.Angles().yaw, 0 ) );
-
-		if ( owner is SandboxPlayer player )
-			player.AddToUndo( ent );
+		ent.Position = tr.EndPosition;
+		ent.Rotation = Rotation.From( new Angles( 0, owner.EyeRotation.Angles().yaw, 0 ) );
 
 		//Log.Info( $"ent: {ent}" );
 	}
@@ -126,18 +143,9 @@ partial class SandboxGame : Game
 		}
 	}
 
-	[ClientCmd( "debug_write" )]
-	public static void Write()
+	[AdminCmd( "respawn_entities" )]
+	public static void RespawnEntities()
 	{
-		ConsoleSystem.Run( "quit" );
+		Map.Reset( DefaultCleanupFilter );
 	}
-
-	//[ClientCmd( "goldenglizzykill" )]
-	//public static void GoldenKill( Client pawn )
-	//{
-		//if ( pawn is Player player )
-		//{
-			//player.Health += -10000000;
-		//}
-	//}
 }

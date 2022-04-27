@@ -38,8 +38,8 @@
 				if ( !Input.Pressed( InputButton.Attack1 ) )
 					return;
 
-				var startPos = Owner.EyePos;
-				var dir = Owner.EyeRot.Forward;
+				var startPos = Owner.EyePosition;
+				var dir = Owner.EyeRotation.Forward;
 
 				var tr = Trace.Ray( startPos, startPos + dir * MaxTraceDistance )
 					.Ignore( Owner )
@@ -48,7 +48,7 @@
 				if ( !tr.Hit || !tr.Entity.IsValid() )
 					return;
 
-				CreateHitEffects( tr.EndPos );
+				CreateHitEffects( tr.EndPosition );
 
 				if ( tr.Entity is LampEntity lamp )
 				{
@@ -71,15 +71,13 @@
 					OuterConeAngle = 45,
 					Brightness = 10,
 					Color = Color.Random,
-					Rotation = Rotation.Identity
+					Rotation = Rotation.Identity,
+					LightCookie = Texture.Load( "materials/effects/lightcookie.vtex" )
 				};
 
 				lamp.SetModel( Model );
 				lamp.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-				lamp.Position = tr.EndPos + -lamp.CollisionBounds.Center + tr.Normal * lamp.CollisionBounds.Size * 0.5f;
-
-				var player = Owner as SandboxPlayer;
-				player.AddToUndo( lamp );
+				lamp.Position = tr.EndPosition + -lamp.CollisionBounds.Center + tr.Normal * lamp.CollisionBounds.Size * 0.5f;
 			}
 		}
 	}
