@@ -1,0 +1,7 @@
+importfilelist
+{
+	"file"	"materials\models\weapons\v_models\pist_deagle\silberslide.vmt"
+	"file"	"materials\models\weapons\v_models\pist_deagle\partssilber.vmt"
+	"file"	"materials\models\weapons\v_models\pist_deagle\silberbody.vmt"
+	"file"	"v_hands_is_unused.vmt"
+}

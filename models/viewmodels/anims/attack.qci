@@ -1,0 +1,7 @@
+$sequence layer_attack "attack.dmx" fps 60.000000 hidden
+$sequence attack "attack.dmx" fps 60.000000 noanimation {
+	numframes 3600
+	blendlayer layer_attack 0 4 3595 3599
+	event AE_WPN_HIDE 0
+	event AE_WPN_UNHIDE 3599
+}

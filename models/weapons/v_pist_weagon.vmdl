@@ -1,0 +1,1172 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "BoneMarkupList"
+				bone_cull_type = "None"
+			},
+			{
+				_class = "WeightListList"
+				children = 
+				[
+					{
+						_class = "WeightList"
+						name = "bonemask_default"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "v_weapon"
+								weight = 1.0
+							},
+							{
+								bone = "v_weapon_deagle_parent"
+								weight = 1.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+				]
+			},
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "v_weapon_deagle_parent"
+						children = 
+						[
+							{
+								_class = "Bone"
+								name = "v_weapon_deagle_trigger"
+								origin = [ 0.0, 2.136541, 0.268839 ]
+								angles = [ -0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+							{
+								_class = "Bone"
+								name = "v_weapon_deagle_slide"
+								origin = [ 0.0, 2.94305, -0.962149 ]
+								angles = [ -0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+							{
+								_class = "Bone"
+								name = "v_weapon_deagle_cliprelease"
+								origin = [ 0.0, 1.995049, -0.820657 ]
+								angles = [ 0.0, -0.006016, 0.0 ]
+								do_not_discard = true
+							},
+							{
+								_class = "Bone"
+								name = "v_weapon_deagle_clip"
+								origin = [ 0.0, 1.245136, -1.018745 ]
+								angles = [ -0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+						]
+						origin = [ 2.71668, -16.733912, 2.336491 ]
+						angles = [ -0.0, 0.0, 89.999985 ]
+						do_not_discard = true
+					},
+					{
+						_class = "Bone"
+						name = "v_weapon"
+						children = 
+						[
+							{
+								_class = "Bone"
+								name = "v_weapon_hands_parent"
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "v_weapon_root34"
+										children = 
+										[
+											{
+												_class = "Bone"
+												name = "v_weapon_left_arm"
+												children = 
+												[
+													{
+														_class = "Bone"
+														name = "v_weapon_eff16"
+														children = 
+														[
+															{
+																_class = "Bone"
+																name = "v_weapon_root16"
+																children = 
+																[
+																	{
+																		_class = "Bone"
+																		name = "v_weapon_left_hand"
+																		children = 
+																		[
+																			{
+																				_class = "Bone"
+																				name = "v_weapon_eff2"
+																				children = 
+																				[
+																					{
+																						_class = "Bone"
+																						name = "v_weapon_root17"
+																						children = 
+																						[
+																							{
+																								_class = "Bone"
+																								name = "v_weapon_left_thumb01"
+																								children = 
+																								[
+																									{
+																										_class = "Bone"
+																										name = "v_weapon_left_thumb_02"
+																										children = 
+																										[
+																											{
+																												_class = "Bone"
+																												name = "v_weapon_left_thumb03"
+																												origin = [ 1.001874, -0.000002, 0.000001 ]
+																												angles = [ -6.633304, -11.227568, -0.842763 ]
+																												do_not_discard = true
+																											},
+																										]
+																										origin = [ 1.88721, 0.000002, 0.0 ]
+																										angles = [ 0.000001, -20.578522, 0.0 ]
+																										do_not_discard = true
+																									},
+																								]
+																								origin = [ 0.0, 0.0, -0.000002 ]
+																								angles = [ -13.968714, 41.509766, -0.571468 ]
+																								do_not_discard = true
+																							},
+																						]
+																						origin = [ -2.657341, -0.365557, -0.324764 ]
+																						angles = [ 10.483353, -3.581217, -176.079269 ]
+																						do_not_discard = true
+																					},
+																					{
+																						_class = "Bone"
+																						name = "v_weapon_root18"
+																						children = 
+																						[
+																							{
+																								_class = "Bone"
+																								name = "v_weapon_left_pinky01"
+																								children = 
+																								[
+																									{
+																										_class = "Bone"
+																										name = "v_weapon_left_pinky02"
+																										children = 
+																										[
+																											{
+																												_class = "Bone"
+																												name = "v_weapon_left_pinky03"
+																												origin = [ 0.632005, 0.000001, 0.0 ]
+																												angles = [ 0.144729, 15.670349, 0.029219 ]
+																												do_not_discard = true
+																											},
+																										]
+																										origin = [ 0.963854, 0.0, -0.000001 ]
+																										angles = [ -0.520932, -0.658615, -0.134361 ]
+																										do_not_discard = true
+																									},
+																								]
+																								origin = [ -0.000001, 0.0, 0.0 ]
+																								angles = [ -3.037765, 22.391134, -0.337129 ]
+																								do_not_discard = true
+																							},
+																						]
+																						origin = [ -0.451685, 1.213948, -0.058022 ]
+																						angles = [ 8.664098, 1.085754, -82.219444 ]
+																						do_not_discard = true
+																					},
+																					{
+																						_class = "Bone"
+																						name = "v_weapon_root19"
+																						children = 
+																						[
+																							{
+																								_class = "Bone"
+																								name = "v_weapon_left_ring01"
+																								children = 
+																								[
+																									{
+																										_class = "Bone"
+																										name = "v_weapon_left_ring02"
+																										children = 
+																										[
+																											{
+																												_class = "Bone"
+																												name = "v_weapon_left_ring03"
+																												origin = [ 0.763067, 0.0, 0.000001 ]
+																												angles = [ 0.059417, 3.325562, 0.008134 ]
+																												do_not_discard = true
+																											},
+																										]
+																										origin = [ 1.208233, -0.000001, 0.000001 ]
+																										angles = [ 0.04813, 14.038044, 0.015468 ]
+																										do_not_discard = true
+																									},
+																								]
+																								origin = [ 0.0, 0.0, -0.000001 ]
+																								angles = [ -1.453135, 13.489148, -0.643032 ]
+																								do_not_discard = true
+																							},
+																						]
+																						origin = [ -0.126645, 0.620188, -0.039312 ]
+																						angles = [ 9.520324, -0.658386, -94.484871 ]
+																						do_not_discard = true
+																					},
+																					{
+																						_class = "Bone"
+																						name = "v_weapon_root20"
+																						children = 
+																						[
+																							{
+																								_class = "Bone"
+																								name = "v_weapon_left_middle01"
+																								children = 
+																								[
+																									{
+																										_class = "Bone"
+																										name = "v_weapon_left_middle02"
+																										children = 
+																										[
+																											{
+																												_class = "Bone"
+																												name = "v_weapon_left_middle03"
+																												origin = [ 0.932634, -0.000001, 0.0 ]
+																												angles = [ 0.136652, -10.038739, 0.003894 ]
+																												do_not_discard = true
+																											},
+																										]
+																										origin = [ 1.250577, 0.0, 0.000001 ]
+																										angles = [ 0.049563, 27.346989, 0.031339 ]
+																										do_not_discard = true
+																									},
+																								]
+																								origin = [ -0.000001, 0.0, -0.000001 ]
+																								angles = [ -3.758775, 3.464963, -0.000002 ]
+																								do_not_discard = true
+																							},
+																						]
+																						origin = [ 0.000001, -0.0, 0.000001 ]
+																						angles = [ 9.200901, -4.284982, -96.936218 ]
+																						do_not_discard = true
+																					},
+																					{
+																						_class = "Bone"
+																						name = "v_weapon_root21"
+																						children = 
+																						[
+																							{
+																								_class = "Bone"
+																								name = "v_weapon_left_index01"
+																								children = 
+																								[
+																									{
+																										_class = "Bone"
+																										name = "v_weapon_left_index02"
+																										children = 
+																										[
+																											{
+																												_class = "Bone"
+																												name = "v_weapon_left_index03"
+																												origin = [ 0.749371, 0.0, -0.000001 ]
+																												angles = [ -0.027959, -6.786227, -0.000002 ]
+																												do_not_discard = true
+																											},
+																										]
+																										origin = [ 1.280974, 0.0, 0.000001 ]
+																										angles = [ -0.023833, 16.849718, -0.010144 ]
+																										do_not_discard = true
+																									},
+																								]
+																								origin = [ 0.0, 0.0, -0.000001 ]
+																								angles = [ -1.815015, 5.237293, -0.000002 ]
+																								do_not_discard = true
+																							},
+																						]
+																						origin = [ -0.09376, -0.657727, 0.062876 ]
+																						angles = [ 9.035601, -5.481203, -97.743034 ]
+																						do_not_discard = true
+																					},
+																				]
+																				origin = [ 3.026591, -0.000001, -0.000002 ]
+																				angles = [ 0.000001, -0.0, 0.000002 ]
+																				do_not_discard = true
+																			},
+																		]
+																		origin = [ -0.0, 0.000002, 0.0 ]
+																		angles = [ 11.491642, 81.592583, 0.046355 ]
+																		do_not_discard = true
+																	},
+																]
+																origin = [ -0.000002, 0.000002, 0.0 ]
+																angles = [ -25.366276, 76.56881, -154.978897 ]
+																do_not_discard = true
+															},
+														]
+														origin = [ 8.563284, -0.000001, 0.0 ]
+														angles = [ -0.000002, -0.0, 0.000003 ]
+														do_not_discard = true
+													},
+													{
+														_class = "Bone"
+														name = "v_weapon_root99"
+														children = 
+														[
+															{
+																_class = "Bone"
+																name = "v_weapon_l_wrist_helper"
+																origin = [ 0.0, 0.000001, 0.0 ]
+																angles = [ -0.000005, -0.000001, -0.0 ]
+																do_not_discard = true
+															},
+														]
+														origin = [ 8.563283, 0.0, 0.000001 ]
+														angles = [ 62.225403, 100.195297, -168.353516 ]
+														do_not_discard = true
+													},
+												]
+												origin = [ -0.0, -0.000001, -0.000001 ]
+												angles = [ 35.721169, 130.473953, 179.999985 ]
+												do_not_discard = true
+											},
+										]
+										origin = [ 6.833632, 1.302327, 6.671466 ]
+										angles = [ 32.400024, -179.999985, 132.692963 ]
+										do_not_discard = true
+									},
+									{
+										_class = "Bone"
+										name = "v_weapon_root36"
+										children = 
+										[
+											{
+												_class = "Bone"
+												name = "v_weapon_right_arm"
+												children = 
+												[
+													{
+														_class = "Bone"
+														name = "v_weapon_eff18"
+														children = 
+														[
+															{
+																_class = "Bone"
+																name = "v_weapon_root23"
+																children = 
+																[
+																	{
+																		_class = "Bone"
+																		name = "v_weapon_right_hand"
+																		children = 
+																		[
+																			{
+																				_class = "Bone"
+																				name = "v_weapon_eff9"
+																				children = 
+																				[
+																					{
+																						_class = "Bone"
+																						name = "v_weapon_root24"
+																						children = 
+																						[
+																							{
+																								_class = "Bone"
+																								name = "v_weapon_right_thumb01"
+																								children = 
+																								[
+																									{
+																										_class = "Bone"
+																										name = "v_weapon_right_thumb02"
+																										children = 
+																										[
+																											{
+																												_class = "Bone"
+																												name = "v_weapon_right_thumb03"
+																												origin = [ 0.98243, 0.000001, 0.0 ]
+																												angles = [ -0.000005, 8.835355, -0.000004 ]
+																												do_not_discard = true
+																											},
+																										]
+																										origin = [ 1.978476, 0.0, 0.0 ]
+																										angles = [ -0.000004, 28.232895, -0.000003 ]
+																										do_not_discard = true
+																									},
+																								]
+																								origin = [ -0.000001, 0.0, -0.0 ]
+																								angles = [ -17.439573, -45.139458, 0.27055 ]
+																								do_not_discard = true
+																							},
+																						]
+																						origin = [ -2.659014, 0.316092, -0.314415 ]
+																						angles = [ 15.071822, -2.721492, -176.670914 ]
+																						do_not_discard = true
+																					},
+																					{
+																						_class = "Bone"
+																						name = "v_weapon_root25"
+																						children = 
+																						[
+																							{
+																								_class = "Bone"
+																								name = "v_weapon_right_index01"
+																								children = 
+																								[
+																									{
+																										_class = "Bone"
+																										name = "v_weapon_right_index02"
+																										children = 
+																										[
+																											{
+																												_class = "Bone"
+																												name = "v_weapon_right_index03"
+																												origin = [ 0.752464, 0.0, 0.000002 ]
+																												angles = [ -0.000001, 14.588987, 0.000003 ]
+																												do_not_discard = true
+																											},
+																										]
+																										origin = [ 1.292972, -0.000001, 0.000002 ]
+																										angles = [ 0.000001, -20.395868, 0.000004 ]
+																										do_not_discard = true
+																									},
+																								]
+																								origin = [ 0.0, -0.000001, 0.0 ]
+																								angles = [ -0.051109, -2.615326, 0.116543 ]
+																								do_not_discard = true
+																							},
+																						]
+																						origin = [ -0.089257, 0.659884, 0.067215 ]
+																						angles = [ 15.363061, -1.933964, 94.97245 ]
+																						do_not_discard = true
+																					},
+																					{
+																						_class = "Bone"
+																						name = "v_weapon_root26"
+																						children = 
+																						[
+																							{
+																								_class = "Bone"
+																								name = "v_weapon_right_middle01"
+																								children = 
+																								[
+																									{
+																										_class = "Bone"
+																										name = "v_weapon_right_middle02"
+																										children = 
+																										[
+																											{
+																												_class = "Bone"
+																												name = "v_weapon_right_middle03"
+																												origin = [ 0.943233, -0.000002, -0.000002 ]
+																												angles = [ 0.0, -2.398116, 0.000003 ]
+																												do_not_discard = true
+																											},
+																										]
+																										origin = [ 1.261222, 0.0, 0.000001 ]
+																										angles = [ 0.0, -13.187141, 0.000002 ]
+																										do_not_discard = true
+																									},
+																								]
+																								origin = [ 0.000001, 0.0, 0.000001 ]
+																								angles = [ -1.540856, -7.069042, -1.881591 ]
+																								do_not_discard = true
+																							},
+																						]
+																						origin = [ -0.000002, 0.000002, -0.0 ]
+																						angles = [ 15.439777, -2.840268, 95.790108 ]
+																						do_not_discard = true
+																					},
+																					{
+																						_class = "Bone"
+																						name = "v_weapon_root27"
+																						children = 
+																						[
+																							{
+																								_class = "Bone"
+																								name = "v_weapon_right_ring01"
+																								children = 
+																								[
+																									{
+																										_class = "Bone"
+																										name = "v_weapon_right_ring02"
+																										children = 
+																										[
+																											{
+																												_class = "Bone"
+																												name = "v_weapon_right_ring03"
+																												origin = [ 0.741942, 0.000001, 0.0 ]
+																												angles = [ 0.0, -4.887502, 0.000005 ]
+																												do_not_discard = true
+																											},
+																										]
+																										origin = [ 1.20837, 0.0, 0.0 ]
+																										angles = [ -0.000001, -8.898382, 0.000004 ]
+																										do_not_discard = true
+																									},
+																								]
+																								origin = [ -0.000001, 0.0, 0.0 ]
+																								angles = [ -5.653661, -14.496749, -0.973508 ]
+																								do_not_discard = true
+																							},
+																						]
+																						origin = [ -0.108524, -0.60796, -0.044204 ]
+																						angles = [ 15.230022, -1.019179, 97.116272 ]
+																						do_not_discard = true
+																					},
+																					{
+																						_class = "Bone"
+																						name = "v_weapon_root28"
+																						children = 
+																						[
+																							{
+																								_class = "Bone"
+																								name = "v_weapon_right_pinky01"
+																								children = 
+																								[
+																									{
+																										_class = "Bone"
+																										name = "v_weapon_right_pinky02"
+																										children = 
+																										[
+																											{
+																												_class = "Bone"
+																												name = "v_weapon_right_pinky03"
+																												origin = [ 0.614689, -0.000003, 0.000001 ]
+																												angles = [ -0.0, -2.108315, 0.000004 ]
+																												do_not_discard = true
+																											},
+																										]
+																										origin = [ 0.996225, 0.0, 0.000001 ]
+																										angles = [ 0.0, -10.519281, 0.000004 ]
+																										do_not_discard = true
+																									},
+																								]
+																								origin = [ 0.000001, 0.0, -0.000001 ]
+																								angles = [ -11.507286, -14.798583, 4.203738 ]
+																								do_not_discard = true
+																							},
+																						]
+																						origin = [ -0.479803, -1.191699, -0.061835 ]
+																						angles = [ 15.356132, 1.850767, 91.516716 ]
+																						do_not_discard = true
+																					},
+																				]
+																				origin = [ 3.013526, 0.0, -0.0 ]
+																				angles = [ -0.0, -0.000001, -0.000003 ]
+																				do_not_discard = true
+																			},
+																		]
+																		origin = [ -0.000001, 0.0, 0.0 ]
+																		angles = [ -11.967258, 2.623172, -0.043949 ]
+																		do_not_discard = true
+																	},
+																]
+																origin = [ 0.000002, 0.0, -0.000001 ]
+																angles = [ 2.205257, -2.907074, -62.617741 ]
+																do_not_discard = true
+															},
+														]
+														origin = [ 8.543639, 0.0, 0.0 ]
+														angles = [ -0.000001, -0.000001, 0.000003 ]
+														do_not_discard = true
+													},
+													{
+														_class = "Bone"
+														name = "v_weapon_root98"
+														children = 
+														[
+															{
+																_class = "Bone"
+																name = "v_weapon_r_wrist_helper"
+																origin = [ 0.0, 0.000001, -0.000001 ]
+																angles = [ 0.0, -0.0, -0.000001 ]
+																do_not_discard = true
+															},
+														]
+														origin = [ 8.543639, -0.0, -0.000001 ]
+														angles = [ -27.413458, 96.386116, -179.303299 ]
+														do_not_discard = true
+													},
+												]
+												origin = [ 0.000001, -0.0, -0.000001 ]
+												angles = [ 35.525448, 131.193588, 179.999985 ]
+												do_not_discard = true
+											},
+										]
+										origin = [ -4.654182, -1.415277, 6.902198 ]
+										angles = [ 32.400024, -179.999985, 132.692963 ]
+										do_not_discard = true
+									},
+								]
+								origin = [ -0.056707, 0.0, -3.094907 ]
+								angles = [ -0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+						]
+						origin = [ 2.0, 4.0, -8.8 ]
+						angles = [ -0.0, 0.0, 89.999985 ]
+						do_not_discard = true
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "materials/models/weapons/v_models/pist_deagle/partssilber.vmat"
+								to = "models/weapons/v_models/pist_deagle/partssilber.vmat"
+							},
+							{
+								from = "materials/models/weapons/v_models/pist_deagle/silberbody.vmat"
+								to = "models/weapons/v_models/pist_deagle/silberbody.vmat"
+							},
+							{
+								from = "materials/models/weapons/v_models/pist_deagle/silberslide.vmat"
+								to = "models/weapons/v_models/pist_deagle/silberslide.vmat"
+							},
+							{
+								from = "v_hands_is_unused.vmat"
+								to = "materials/weapons/v_hand/changethis.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "1"
+						parent_bone = "v_weapon_deagle_parent"
+						relative_origin = [ 0.0, 2.75, 6.500001 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "2"
+						parent_bone = "v_weapon_deagle_parent"
+						relative_origin = [ 0.0, 2.9, 0.000002 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_deagle_parent"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.62168, -1.479791, -3.567111 ]
+								hitbox_maxs = [ 0.57212, 3.762207, 5.904489 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_deagle_slide"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.55338, -0.71944, -1.75246 ]
+								hitbox_maxs = [ 0.51242, 0.91706, 5.874041 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_hands_parent"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -4.654183, -1.415277, 0.0 ]
+								hitbox_maxs = [ 6.833632, 1.302325, 6.902198 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_left_arm"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.318573, -1.832792, -1.433751 ]
+								hitbox_maxs = [ 8.563283, 1.491285, 1.707561 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_left_hand"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.268314, -1.33205, -1.460237 ]
+								hitbox_maxs = [ 3.189644, 1.901429, 1.020293 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_left_thumb_02"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.0, -0.471079, -0.625544 ]
+								hitbox_maxs = [ 1.022361, 0.535547, 0.478216 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_l_wrist_helper"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.733028, -2.365396, -0.851722 ]
+								hitbox_maxs = [ 1.169365, 0.0, 1.675625 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_right_arm"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.402366, -1.436796, -1.575876 ]
+								hitbox_maxs = [ 8.543639, 1.387257, 1.60928 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_right_hand"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.195977, -1.774973, -0.87575 ]
+								hitbox_maxs = [ 3.103976, 1.444199, 0.913162 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_right_thumb01"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.340527, -0.924005, -0.633917 ]
+								hitbox_maxs = [ 1.978476, 0.605814, 0.852227 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_right_thumb02"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.0, -0.580042, -0.566963 ]
+								hitbox_maxs = [ 1.030727, 0.620556, 0.491094 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "v_weapon_r_wrist_helper"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.914562, -2.548688, -1.24884 ]
+								hitbox_maxs = [ 1.2925, 0.174556, 1.239053 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "v_pist_weagon_bg_studio_lod0"
+						filename = "models/weapons/v_pist_weagon_refs/mesh/v_pist_weagon_bg_studio_lod0.dmx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "v_pist_weagon_bg_hands_lod0"
+						filename = "models/weapons/v_pist_weagon_refs/mesh/v_pist_weagon_bg_hands_lod0.dmx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "idle1"
+						activity_name = "ACT_VM_IDLE"
+						activity_weight = 1
+						weight_list_name = "bonemask_default"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_idle1_0.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 5.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "shoot1"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_MUZZLEFLASH0"
+								event_frame = 0
+								event_keys = null
+							},
+						]
+						activity_name = "ACT_VM_PRIMARYATTACK"
+						activity_weight = 1
+						weight_list_name = "bonemask_default"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_shoot1_1.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 40.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "shoot2"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_MUZZLEFLASH0"
+								event_frame = 0
+								event_keys = null
+							},
+						]
+						activity_name = "ACT_VM_PRIMARYATTACK"
+						activity_weight = 1
+						weight_list_name = "bonemask_default"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_shoot2_2.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 40.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "shoot_empty"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_MUZZLEFLASH0"
+								event_frame = 0
+								event_keys = null
+							},
+						]
+						activity_name = "ACT_VM_DRYFIRE"
+						activity_weight = 1
+						weight_list_name = "bonemask_default"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_shoot_empty_3.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 40.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "reload"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 14
+								event_keys = 
+								{
+									name = "Weapon_DEagle.Clipout"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 34
+								event_keys = 
+								{
+									name = "Weapon_DEagle.Clipin"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 48
+								event_keys = 
+								{
+									name = "Weapon_DEagle.Slideback"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
+						]
+						activity_name = "ACT_VM_RELOAD"
+						activity_weight = 1
+						weight_list_name = "bonemask_default"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_reload_4.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 30.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "draw"
+						children = 
+						[
+							{
+								_class = "AnimEvent"
+								event_class = "AE_CL_PLAYSOUND"
+								event_frame = 1
+								event_keys = 
+								{
+									name = "Weapon_DEagle.Deploy"
+									stop_on_seq_change = false
+									use_layer_sequence = false
+									tags = ""
+								}
+							},
+						]
+						activity_name = "ACT_VM_DRAW"
+						activity_weight = 1
+						weight_list_name = "bonemask_default"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_draw_5.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 30.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "@idle1_0"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_idle1_0.dmx"
+						start_frame = 0
+						end_frame = 31
+						framerate = 5.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "@shoot1_1"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_shoot1_1.dmx"
+						start_frame = 0
+						end_frame = 28
+						framerate = 40.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "@shoot2_2"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_shoot2_2.dmx"
+						start_frame = 0
+						end_frame = 28
+						framerate = 40.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "@shoot_empty_3"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_shoot_empty_3.dmx"
+						start_frame = 0
+						end_frame = 24
+						framerate = 40.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "@reload_4"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_reload_4.dmx"
+						start_frame = 0
+						end_frame = 66
+						framerate = 30.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "@draw_5"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/weapons/v_pist_weagon_refs/anim/_draw_5.dmx"
+						start_frame = 0
+						end_frame = 31
+						framerate = 30.0
+						reverse = false
+					},
+				]
+				default_root_bone_name = ""
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}

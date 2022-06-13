@@ -4,6 +4,9 @@ Layer0
 {
 	shader "generic.vfx"
 
+	//---- Self Illum ----
+	F_SELF_ILLUM 1
+
 	//---- Specular ----
 	F_SPECULAR 1
 
@@ -28,4 +31,9 @@ Layer0
 
 	//---- Normal Map ----
 	g_flBumpStrength "1.000"
+
+	//---- Self Illum ----
+	g_flSelfIllumScale "7.446"
+	g_vSelfIllumTint "[1.000000 1.000000 1.000000 0.000000]"
+	TextureSelfIllumMask "materials/default/default_selfillum.tga"
 }
