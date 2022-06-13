@@ -1,7 +1,0 @@
-importfilelist
-{
-	"file"	"9mm_is_unused.vmt"
-	"file"	"shooterpistol_magazine_is_unused.vmt"
-	"file"	"vr_shooterpistol_is_unused.vmt"
-	"file"	"HEV_hands_is_unused.vmt"
-}

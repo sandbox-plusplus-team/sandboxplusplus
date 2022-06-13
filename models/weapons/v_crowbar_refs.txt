@@ -1,6 +1,0 @@
-importfilelist
-{
-	"file"	"crowbar_cyl_is_unused.vmt"
-	"file"	"v_hand_sheet_is_unused.vmt"
-	"file"	"head_uvw_is_unused.vmt"
-}
