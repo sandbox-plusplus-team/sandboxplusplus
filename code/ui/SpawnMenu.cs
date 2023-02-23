@@ -29,9 +29,6 @@ public partial class SpawnMenu : Panel
 
 				var ents = body.AddChild<EntityList>();
 				tabs.AddButtonActive( "Entities", ( b ) => ents.SetClass( "active", b ) );
-
-				var models = body.AddChild<CloudModelList>();
-				tabs.AddButtonActive( "s&works", ( b ) => models.SetClass( "active", b ) );
 			}
 		}
 
@@ -58,7 +55,7 @@ public partial class SpawnMenu : Panel
 	{
 		toollist.DeleteChildren( true );
 
-		foreach ( var entry in TypeLibrary.GetDescriptions<BaseTool>() )
+		foreach ( var entry in TypeLibrary.GetTypes<BaseTool>() )
 		{
 			if ( entry.Title == "BaseTool" )
 				continue;
@@ -89,13 +86,13 @@ public partial class SpawnMenu : Panel
 	void UpdateActiveTool()
 	{
 		var toolCurrent = ConsoleSystem.GetValue( "tool_current" );
-		var tool = string.IsNullOrWhiteSpace( toolCurrent ) ? null : TypeLibrary.GetDescription<BaseTool>( toolCurrent );
+		//var tool = string.IsNullOrWhiteSpace( toolCurrent ) ? null : TypeLibrary.GetTypes<BaseTool>( toolCurrent );
 
 		foreach ( var child in toollist.Children )
 		{
 			if ( child is Button button )
 			{
-				child.SetClass( "active", tool != null && button.Text == tool.Title );
+				//child.SetClass( "active", tool != null && button.Text == tool.Title );
 			}
 		}
 	}

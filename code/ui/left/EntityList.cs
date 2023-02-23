@@ -28,7 +28,7 @@ public partial class EntityList : Panel
 			}
 		};
 
-		var ents = TypeLibrary.GetDescriptions<Entity>()
+		var ents = TypeLibrary.GetTypes<Entity>()
 									.Where( x => x.HasTag( "spawnable" ) )
 									.OrderBy( x => x.Title )
 									.ToArray();

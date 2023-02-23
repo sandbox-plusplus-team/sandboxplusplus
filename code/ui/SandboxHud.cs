@@ -4,9 +4,21 @@ using Sandbox.UI;
 [Library]
 public partial class SandboxHud : HudEntity<RootPanel>
 {
+	public static SandboxHud Current;
 	public SandboxHud()
 	{
-		if ( !IsClient )
+			
+
+		//If we already have a hud, delete and nullify the old hud
+		//so we can start a new one
+		if ( Current != null )
+		{
+			Current?.Delete();
+			Current = null;
+		}
+
+		Current = this;
+		if ( !Game.IsClient )
 			return;
 
 		RootPanel.StyleSheet.Load( "/ui/SandboxHud.scss" );
@@ -21,4 +33,6 @@ public partial class SandboxHud : HudEntity<RootPanel>
 		RootPanel.AddChild<SpawnMenu>();
 		RootPanel.AddChild<Crosshair>();
 	}
+
 }
+

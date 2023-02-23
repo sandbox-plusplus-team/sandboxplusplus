@@ -89,8 +89,7 @@ InventoryBar
 	align-items: flex-end;
 }
 
-InventoryIcon
-{
+InventoryIcon {
 	width: 80px;
 	height: 80px;
 	margin: 0px 2px;
@@ -102,8 +101,7 @@ InventoryIcon
 	backdrop-filter: blur( 50px );
 	border-radius: 10px;
 
-	.item-name
-	{
+	.item-name {
 		padding: 5px;
 		color: white;
 		text-align: center;
@@ -118,8 +116,7 @@ InventoryIcon
 		mix-blend-mode: lighten;
 	}
 
-	.slot-number
-	{
+	.slot-number {
 		font-size: 25px;
 		color: black;
 		font-weight: 900;
@@ -129,24 +126,30 @@ InventoryIcon
 		right: 5px;
 	}
 
-	&.active
-	{
+	&.active {
 		background-color: rgba( #3472e6, 1 );
 		transition: all 0.1s ease-out;
 		width: 100px;
 		height: 100px;
 
-		.slot-number
-		{
+		.slot-number {
 			color: #fff;
-			opacity : 1;
+			opacity: 1;
 		}
 
-		.item-name
-		{
+		.item-name {
 			opacity: 1;
 			transition: all 0.1s ease-out;
 			font-size: 13px;
 		}
+	}
+
+	.tooltip {
+		font-family: Roboto;
+		background-color: rgba( #fea, 0.95 );
+		border: 1px solid rgba( #555, 0.1 );
+		padding: 2px 5px;
+		border-radius: 3px;
+		color: #222;
 	}
 }

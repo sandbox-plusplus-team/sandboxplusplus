@@ -22,6 +22,7 @@ public partial class SpawnList : Panel
 			var panel = cell.Add.Panel( "icon" );
 			panel.AddEventListener( "onclick", () => ConsoleSystem.Run( "spawn", "models/" + file ) );
 			panel.Style.BackgroundImage = Texture.Load( FileSystem.Mounted, $"/models/{file}_c.png", false );
+			panel.Tooltip = file;
 		};
 
 		foreach ( var file in FileSystem.Mounted.FindFile( "models", "*.vmdl_c.png", true ) )
@@ -29,7 +30,7 @@ public partial class SpawnList : Panel
 			if ( string.IsNullOrWhiteSpace( file ) ) continue;
 			if ( file.Contains( "_lod0" ) ) continue;
 			if ( file.Contains( "clothes" ) ) continue;
-
+	
 			Canvas.AddItem( file.Remove( file.Length - 6 ) );
 		}
 	}

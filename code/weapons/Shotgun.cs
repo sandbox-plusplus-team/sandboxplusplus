@@ -57,7 +57,7 @@ partial class Shotgun : Weapon
 	[ClientRpc]
 	protected override void ShootEffects()
 	{
-		Host.AssertClient();
+		Game.AssertClient();
 
 		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 		Particles.Create( "particles/pistol_ejectbrass.vpcf", EffectEntity, "ejection_point" );
@@ -68,7 +68,7 @@ partial class Shotgun : Weapon
 	[ClientRpc]
 	protected virtual void DoubleShootEffects()
 	{
-		Host.AssertClient();
+		Game.AssertClient();
 
 		Particles.Create( "particles/pistol_muzzleflash.vpcf", EffectEntity, "muzzle" );
 
@@ -91,9 +91,10 @@ partial class Shotgun : Weapon
 		ViewModelEntity?.SetAnimParameter( "reload_finished", true );
 	}
 
-	public override void SimulateAnimator( PawnAnimator anim )
+	public override void SimulateAnimator( CitizenAnimationHelper anim )
 	{
-		anim.SetAnimParameter( "holdtype", 3 ); // TODO this is shit
-		anim.SetAnimParameter( "aim_body_weight", 1.0f );
+		anim.HoldType = CitizenAnimationHelper.HoldTypes.Shotgun;
+		anim.Handedness = CitizenAnimationHelper.Hand.Both;
+		anim.AimBodyWeight = 1.0f;
 	}
 }

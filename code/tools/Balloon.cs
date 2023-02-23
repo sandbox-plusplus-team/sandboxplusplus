@@ -1,4 +1,6 @@
-﻿namespace Sandbox.Tools
+﻿using Sandbox.Physics;
+
+namespace Sandbox.Tools
 {
 	[Library( "tool_balloon", Title = "Balloons", Description = "Create Balloons!", Group = "construction" )]
 	public partial class BalloonTool : BaseTool
@@ -12,7 +14,7 @@
 		{
 			base.Activate();
 
-			if ( Host.IsServer )
+			if ( Game.IsServer )
 			{
 				Tint = Color.Random;
 			}
@@ -44,7 +46,7 @@
 				previewModel.RenderColor = Tint;
 			}
 
-			if ( !Host.IsServer )
+			if ( !Game.IsServer )
 				return;
 
 			using ( Prediction.Off() )
@@ -53,12 +55,7 @@
 				if ( !useRope && !Input.Pressed( InputButton.SecondaryAttack ) )
 					return;
 
-				var startPos = Owner.EyePosition;
-				var dir = Owner.EyeRotation.Forward;
-
-				var tr = Trace.Ray( startPos, startPos + dir * MaxTraceDistance )
-					.Ignore( Owner )
-					.Run();
+				var tr = DoTrace();
 
 				if ( !tr.Hit )
 					return;

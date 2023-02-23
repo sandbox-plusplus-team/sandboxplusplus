@@ -1,4 +1,6 @@
-﻿namespace Sandbox.Tools
+﻿using Sandbox.Physics;
+
+namespace Sandbox.Tools
 {
 	[Library( "tool_rope", Title = "Rope", Description = "Join two things together with a rope", Group = "construction" )]
 	public partial class RopeTool : BaseTool
@@ -10,7 +12,7 @@
 
 		public override void Simulate()
 		{
-			if ( !Host.IsServer )
+			if ( !Game.IsServer )
 				return;
 
 			using ( Prediction.Off() )
@@ -21,9 +23,7 @@
 				var startPos = Owner.EyePosition;
 				var dir = Owner.EyeRotation.Forward;
 
-				var tr = Trace.Ray( startPos, startPos + dir * MaxTraceDistance )
-					.Ignore( Owner )
-					.Run();
+				var tr = DoTrace();
 
 				if ( !tr.Hit )
 					return;

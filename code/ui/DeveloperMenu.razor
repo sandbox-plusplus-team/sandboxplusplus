@@ -1,0 +1,61 @@
+﻿@attribute [StyleSheet("/UI/Quantum.scss")]
+@inherits Window
+@using Sandbox.UI;
+@namespace XGUI.UI
+<style>
+    .bwmargin {
+        margin-bottom: 3px;
+    }
+</style>
+<root title="Developer Menu">
+    <div style="width:300px;height:20px; flex-direction:column;">
+        <button class="bwmargin" @onclick=@(() => ToggleView( player ))> Toggle ThirdPerson </button>
+        <button class="bwmargin" @onclick=@(() => ConsoleSystem.Run("kill"))> Commit Sudoku </button>
+        <button class="bwmargin">Create Blue Portal</button>
+        <button class="bwmargin">Create Orange Portal</button> 
+        <button class="bwmargin" @onclick=@(() => ConsoleSystem.Run("ent_create", "prop_weighted_cube")))>Create Cube (Normal)</button>
+        <button class="bwmargin" @onclick=@(() => ConsoleSystem.Run("ent_create", "prop_weighted_cube")))>Create Cube (Companion)</button>
+        <button class="bwmargin" @onclick=@(() => ConsoleSystem.Run("ent_create", "prop_weighted_cube")))>Create Cube (Reflect)</button>
+    </div>
+</root>
+
+ @code {
+
+
+    [Event.Tick.Client]
+    public void tick()
+    {
+        var w = 10;
+        var h = 90;
+        //Style = "width:300px;height:200px; flex-direction:column;";
+        PanelBounds = new Rect(-250, -90, 500, 300);
+        
+        Scale = 1.0f;
+        StateHasChanged();
+        //PanelBounds = new Rect(-(w / 2), -(h / 2), w, h);
+    }
+    public Player player { get; set; }
+     public bool IsThirdPerson { get; set; }
+     public bool IsFirstPerson { get; set; }
+     
+     public void ToggleView( Player player )
+     {
+         if ( Game.IsClient )
+         {
+             if (IsFirstPerson)
+             {
+                 
+                 Log.Error("Switched to Third Person");
+                 IsThirdPerson = true;
+                 IsFirstPerson = false;
+             }
+             else
+             {
+                 
+                 Log.Error("Switched to First Person");
+                 IsThirdPerson = false;
+                 IsFirstPerson = true;
+             }
+         }
+    }
+ }

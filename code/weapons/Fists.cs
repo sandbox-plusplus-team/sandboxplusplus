@@ -41,34 +41,16 @@ partial class Fists : Weapon
 	{
 	}
 
-	public override void SimulateAnimator( PawnAnimator anim )
+	public override void SimulateAnimator( CitizenAnimationHelper anim )
 	{
-		anim.SetAnimParameter( "holdtype", 5 );
-		anim.SetAnimParameter( "aim_body_weight", 1.0f );
-
-		if ( Owner.IsValid() && ViewModelEntity.IsValid() )
-		{
-			ViewModelEntity.SetAnimParameter( "b_grounded", Owner.GroundEntity.IsValid() );
-			ViewModelEntity.SetAnimParameter( "aim_pitch", Owner.EyeRotation.Pitch() );
-			ViewModelEntity.SetAnimParameter( "b_jump", anim.HasEvent( "jump" ) );
-
-			var dir = Owner.Velocity;
-			var forward = Owner.Rotation.Forward.Dot( dir );
-			var sideward = Owner.Rotation.Right.Dot( dir );
-			var speed = dir.WithZ( 0 ).Length;
-
-			const float maxSpeed = 320.0f;
-
-			ViewModelEntity.SetAnimParameter( "move_groundspeed", MathX.Clamp( (speed / maxSpeed) * 2.0f, 0.0f, 2.0f ) );
-			ViewModelEntity.SetAnimParameter( "move_y", MathX.Clamp( (sideward / maxSpeed) * 2.0f, -2.0f, 2.0f ) );
-			ViewModelEntity.SetAnimParameter( "move_x", MathX.Clamp( (forward / maxSpeed) * 2.0f, -2.0f, 2.0f ) );
-			ViewModelEntity.SetAnimParameter( "move_z", MathX.Clamp( (dir.z / maxSpeed) * 2.0f, -2.0f, 2.0f ) );
-		}
+		anim.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
+		anim.Handedness = CitizenAnimationHelper.Hand.Both;
+		anim.AimBodyWeight = 1.0f;
 	}
 
 	public override void CreateViewModel()
 	{
-		Host.AssertClient();
+		Game.AssertClient();
 
 		if ( string.IsNullOrEmpty( ViewModelPath ) )
 			return;
@@ -87,12 +69,14 @@ partial class Fists : Weapon
 
 	private bool MeleeAttack()
 	{
-		var forward = Owner.EyeRotation.Forward;
+		var ray = Owner.AimRay;
+
+		var forward = ray.Forward;
 		forward = forward.Normal;
 
 		bool hit = false;
 
-		foreach ( var tr in TraceBullet( Owner.EyePosition, Owner.EyePosition + forward * 80, 20.0f ) )
+		foreach ( var tr in TraceMelee( ray.Position, ray.Position + forward * 80, 20.0f ) )
 		{
 			if ( !tr.Entity.IsValid() ) continue;
 
@@ -100,7 +84,7 @@ partial class Fists : Weapon
 
 			hit = true;
 
-			if ( !IsServer ) continue;
+			if ( !Game.IsServer ) continue;
 
 			using ( Prediction.Off() )
 			{
@@ -119,7 +103,7 @@ partial class Fists : Weapon
 	[ClientRpc]
 	private void OnMeleeMiss( bool leftHand )
 	{
-		Host.AssertClient();
+		Game.AssertClient();
 
 		ViewModelEntity?.SetAnimParameter( "attack_has_hit", false );
 		ViewModelEntity?.SetAnimParameter( "attack", true );
@@ -129,7 +113,7 @@ partial class Fists : Weapon
 	[ClientRpc]
 	private void OnMeleeHit( bool leftHand )
 	{
-		Host.AssertClient();
+		Game.AssertClient();
 
 		ViewModelEntity?.SetAnimParameter( "attack_has_hit", true );
 		ViewModelEntity?.SetAnimParameter( "attack", true );
